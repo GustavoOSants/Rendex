@@ -296,3 +296,8 @@ button:disabled {
 .indicadores strong.reserva-indefinida {
   color: #7FA6FF;
 }
+
+/* Despesas em vermelho */
+#resultado-despesas {
+  color: #FF6A4D;
+}
