@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Financeiro | Rendex</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>rende<span>x</span></h1>
+      <nav>
+        <a href="#dashboard">Meu Financeiro</a>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section class="introducao">
+        <h2>Seu Raio-X Financeiro</h2>
+        <p>Descubra para onde vai seu dinheiro e receba orientações para organizar suas finanças.</p>
+      </section>
+
+      <div class="dashboard-container">
+        <section class="card">
+          <h3>Seus números do mês</h3>
+
+          <form id="form-financeiro">
+            <h4>Ganhos</h4>
+
+            <label for="renda">Salário mensal (R$)</label>
+            <input type="number" id="renda" min="0" step="0.01" required />
+
+            <label for="rendaExtra">Renda extra (R$)</label>
+            <input type="number" id="rendaExtra" min="0" step="0.01" value="0" />
+
+            <h4>Gastos</h4>
+
+            <label for="moradia">Moradia (R$)</label>
+            <input type="number" id="moradia" min="0" step="0.01" value="0" />
+
+            <label for="alimentacao">Alimentação (R$)</label>
+            <input type="number" id="alimentacao" min="0" step="0.01" value="0" />
+
+            <label for="transporte">Transporte (R$)</label>
+            <input type="number" id="transporte" min="0" step="0.01" value="0" />
+
+            <label for="contas">Contas (R$)</label>
+            <input type="number" id="contas" min="0" step="0.01" value="0" />
+
+            <label for="lazer">Lazer (R$)</label>
+            <input type="number" id="lazer" min="0" step="0.01" value="0" />
+
+            <label for="dividas">Parcelas de dívidas (R$)</label>
+            <input type="number" id="dividas" min="0" step="0.01" value="0" />
+
+            <label for="reserva">Reserva atual (R$)</label>
+            <input type="number" id="reserva" min="0" step="0.01" value="0" />
+
+            <button type="submit" class="btn-primario">Gerar meu Raio-X</button>
+          </form>
+        </section>
+
+        <section class="resultados">
+          <div class="card">
+            <h3>Diagnóstico Financeiro</h3>
+
+            <div class="indicadores">
+              <div>
+                <p>Renda mensal</p>
+                <strong id="resultado-renda">R$ 0,00</strong>
+              </div>
+
+              <div>
+                <p>Despesas totais</p>
+                <strong id="resultado-despesas">R$ 0,00</strong>
+              </div>
+
+              <div>
+                <p>Saldo disponível</p>
+                <strong id="resultado-saldo">R$ 0,00</strong>
+              </div>
+
+              <div>
+                <p>Renda comprometida</p>
+                <strong id="resultado-percentual">0%</strong>
+              </div>
+
+              <div>
+                <p>Reserva de emergência</p>
+                <strong id="resultado-reserva">R$ 0,00</strong>
+              </div>
+
+              <div>
+                <p>Cobertura da reserva</p>
+                <strong id="resultado-meses">0 meses</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Distribuição dos gastos</h3>
+            <canvas id="grafico-despesas"></canvas>
+          </div>
+
+          <div class="card">
+            <h3>Rendex IA ✨</h3>
+
+            <p>Receba orientações financeiras personalizadas com inteligência artificial.</p>
+
+            <button id="btn-analise-ia" type="button" disabled>Analisar minhas finanças com IA</button>
+
+            <div id="resultado-ia" aria-live="polite">Gere seu Raio-X para começar.</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/financeiro.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
