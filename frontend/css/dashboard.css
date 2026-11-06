@@ -92,7 +92,7 @@ main {
 .dashboard-container {
   display: grid;
   grid-template-columns: 32.25rem minmax(0, 1fr);
-  gap: 24px;
+  gap: 16px;
   align-items: start;
 }
 
@@ -113,27 +113,6 @@ main {
 .card h4 {
   font-size: 13px;
   text-transform: uppercase;
-}
-.ganhos{
-  & h4{
-    margin-bottom: 12px;
-    color: var(--verde);
-  }
-  & input{
-    margin-bottom: 16px;
-  }
-}
-.gastos{
-  & h4{
-    margin-bottom: 12px;
-    color: #FF6A4D;
-  }
-  & input{
-    margin-bottom: 18px;
-  }
-}
-.lazer {
-  margin-bottom: 20px;
 }
 
 /* FORMULÁRIO */
@@ -171,6 +150,27 @@ textarea {
 input:focus {
   border-color: var(--verde);
   box-shadow: 0 0 0 2px #1FD18B22;
+}
+.ganhos{
+  & h4{
+    margin-bottom: 12px;
+    color: var(--verde);
+  }
+  & input{
+    margin-bottom: 16px;
+  }
+}
+.gastos{
+  & h4{
+    margin-bottom: 12px;
+    color: #FF6A4D;
+  }
+  & input{
+    margin-bottom: 18px;
+  }
+}
+.lazer {
+  margin-bottom: 20px;
 }
 
 /* BOTÕES */
