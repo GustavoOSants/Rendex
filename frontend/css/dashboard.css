@@ -190,7 +190,17 @@ button {
 }
 
 .btn-primario:hover {
-  background-color: #18B879;
+  background-color: #18b878;
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  border: 2px solid var(--verde);
+  color: var(--verde);
+}
+.btn-secundario:hover {
+  background-color: #18b87824;
   transform: translateY(-2px);
 }
 
@@ -204,11 +214,6 @@ button:disabled {
 .input-IA {
   display: flex;
   gap: 8px;
-}
-
-#btn-analise-ia {
-  background-color: var(--verde);
-  color: var(--verde-escuro);
 }
 
 /* RESPONSIVIDADE */
