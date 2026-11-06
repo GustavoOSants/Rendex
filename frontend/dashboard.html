@@ -26,25 +26,29 @@
 
       <div class="dashboard-container">
         <section class="card">
-          <h3>Seus números do mês</h3>
+          <h3>Suas finanças</h3>
 
           <form id="form-financeiro">
-            <h4>Ganhos</h4>
+            <div class="ganhos">
+              <h4>Ganhos</h4>
+              <label for="renda">Salário / renda líquida (R$)</label>
+              <input class="renda" type="number" id="renda" min="0" step="0.01" required />
+            </div>
 
-            <label for="renda">Salário / renda líquida (R$)</label>
-            <input type="number" id="renda" min="0" step="0.01" required />
+            <div class="gastos">
+              <h4>Gastos</h4>
 
-            <h4>Gastos</h4>
-
-            <label for="moradia">Moradia (R$)</label>
-            <input type="number" id="moradia" min="0" step="0.01" value="0" />
-
-            <label for="transporte">Transporte (R$)</label>
-            <input type="number" id="transporte" min="0" step="0.01" value="0" />
-
-            <label for="lazer">Lazer (R$)</label>
-            <input type="number" id="lazer" min="0" step="0.01" value="0" />
-            <button type="submit" class="btn-primario">Minha situação</button>
+              <label for="moradia">Moradia (R$)</label>
+              <input class="moradia" type="number" id="moradia" min="0" step="0.01" value="0" />
+              
+              <label for="transporte">Transporte (R$)</label>
+              <input class="transporte" type="number" id="transporte" min="0" step="0.01" value="0" />
+              
+              <label for="lazer">Lazer (R$)</label>
+              <input class="lazer" type="number" id="lazer" min="0" step="0.01" value="0" />
+              
+              <button type="submit" class="btn-primario">Minha situação</button>
+            </div>
           </form>
         </section>
 
