@@ -91,7 +91,7 @@ main {
 
 .dashboard-container {
   display: grid;
-  grid-template-columns: 350px minmax(0, 1fr);
+  grid-template-columns: 32.25rem minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }
@@ -108,7 +108,6 @@ main {
 
 .card h3 {
   font-size: 18px;
-  margin-bottom: 20px;
 }
 
 .card h4 {
@@ -131,7 +130,7 @@ label {
   color: #B8C4DD;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: 12px;
   background-color: var(--campo);
@@ -142,6 +141,12 @@ input {
   outline: none;
   margin-bottom: 8px;
   transition: border-color 0.2s;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  margin-top:20px
 }
 
 input:focus {
@@ -175,47 +180,6 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
-}
-
-/* RESULTADOS */
-
-.resultados {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 0;
-}
-
-.indicadores {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 15px;
-}
-
-.indicadores div {
-  background-color: #1B2A4D;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid var(--borda);
-}
-
-.indicadores p {
-  color: #AAB7D0;
-  font-size: 13px;
-  margin-bottom: 8px;
-}
-
-.indicadores strong {
-  color: var(--verde);
-  font-size: clamp(17px, 2vw, 23px);
-  overflow-wrap: anywhere;
-}
-
-/* GRÁFICOS */
-
-#grafico-despesas {
-  width: 100% !important;
-  max-height: 320px;
 }
 
 /* INTELIGÊNCIA ARTIFICIAL */
