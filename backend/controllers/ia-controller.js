@@ -1,4 +1,4 @@
-const {GoogleGenIa} = require("@google/genai");
+const { GoogleGenAI } = require("@google/genai");
 
 async function gerarDescricao(req, res){
 
@@ -13,13 +13,13 @@ async function gerarDescricao(req, res){
       return res.status(500).json({ mensagem: "Chave de API do Gemini não configurada." });
     }
 
-    const ia = new GoogleGenIa({ apiKey: process.env.GEMINI_API_KEY});
+    const ia = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     const prompt = `Gere uma descrição curta, objetiva e personalizada de análise financeira com base na renda de ${renda} e despesas de ${despesas}.
     Não inclua informações de contato, links ou referências externas. A descrição deve ser clara, concisa e útil para o usuário. Não invente informações, apenas utilize os dados fornecidos.`;
 
     const resposta = await ia.models.generateContent({
-      model: "gemini-3.5-flash-lite",
+      model: "gemini-3.1-flash-lite",
       contents: prompt,
     });
 
