@@ -77,9 +77,22 @@
       <div class="overlay" id="overlay">
         <div class="card">
           <div class="cadastro-gastos">
-            <label for="novo-gasto">Novo gasto (R$)</label>
-            <input type="text" id="novo-gasto" placeholder="Ex: Alimentação" />
+            <h3 for="novo-gasto">Novo gasto / Renda (R$)</h3>
+            <div class="tipo-cadastro">
+              <span>Tipo de categoria</span>
 
+              <label class="opcao-checkbox-gasto">
+                <input type="radio" name="tipo-cadastro" value="gasto" checked />
+                <span>Gasto</span>
+              </label>
+              <label class="opcao-checkbox-renda">
+                <input type="radio" name="tipo-cadastro" value="renda" />
+                <span>Renda</span>
+              </label>
+            </div>
+            
+            <label for="">Nome da categoria</label>
+            <input type="text" id="novo-gasto" placeholder="Ex: Alimentação" />
             <button class="btn-primario" id="btn-salvar-gasto">Salvar</button>
           </div>
         </div>

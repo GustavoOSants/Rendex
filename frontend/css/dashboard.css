@@ -13,6 +13,7 @@
   --branco: #FFFFFF;
   --azul: #7FA6FF;
   --laranja: #FF6A4D;
+  --laranja-escuro: #7A2E1D;
   --apoio: #1C3A3A;
   --campo: #0A1120;
 }
@@ -134,6 +135,43 @@ main {
     left: 18.50rem;
   }
 }
+.tipo-cadastro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+.opcao-checkbox-gasto, .opcao-checkbox-renda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  color: var(--texto);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.opcao-checkbox-renda:hover {
+  border-color: var(--verde);
+  background-color: var(--verde-escuro);
+}
+.opcao-checkbox-gasto:hover {
+  border-color: var(--laranja);
+  background-color: var(--laranja-escuro);
+}
+
+.opcao-checkbox-renda input {
+  accent-color: var(--verde);
+  width: 16px;
+  height: 16px;
+}
+.opcao-checkbox-gasto input {
+  accent-color: var(--laranja);
+  width: 16px;
+  height: 16px;
+}
 /* FORMULÁRIO */
 
 form {
@@ -188,7 +226,7 @@ input:focus {
 .gastos{
   & h4{
     margin-bottom: 12px;
-    color: #FF6A4D;
+    color: var(--laranja);
   }
   & input{
     margin-bottom: 18px;
