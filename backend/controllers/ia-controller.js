@@ -3,7 +3,7 @@ const { GoogleGenAI } = require("@google/genai");
 async function gerarDescricao(req, res){
 
   try {
-    const { renda, despesas } = req.body;
+    const { renda, despesas, valoresDetalhados } = req.body;
 
     if(!renda || !despesas){
       return res.status(400).json({ mensagem: "Renda e despesas são obrigatórios." });
@@ -15,8 +15,22 @@ async function gerarDescricao(req, res){
 
     const ia = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
-    const prompt = `Gere uma descrição curta, objetiva e personalizada de análise financeira com base na renda de ${renda} e despesas de ${despesas}.
-    Não inclua informações de contato, links ou referências externas. A descrição deve ser clara, concisa e útil para o usuário. Não invente informações, apenas utilize os dados fornecidos.`;
+    const prompt = `
+    Gere uma descrição curta, objetiva e personalizada de análise financeira com base na renda de ${renda} e despesas de ${despesas}.
+    Gere formas de otimizar os gastos, economizar dinheiro e melhorar a saúde financeira do usuário e quais são os investimentos recomendados por você.
+    
+    Analise estes dados financeiros sem alterar nenhum valor:
+    Renda mensal: R$ ${renda}
+    Total de despesas: R$ ${despesas}
+    Despesas detalhadas: ${JSON.stringify(valoresDetalhados)}
+    
+    Use exatamente os valores fornecidos.
+    Não invente nem substitua valores.
+    Não use Markdown, asteriscos ou formatação especial.
+    Retorne apenas texto simples, claro e objetivo.
+    Coloque no máximo 3 parágrafos, cada um com no máximo 40 palavras.
+    Não inclua informações de contato, links ou referências externas. A descrição deve ser clara, concisa e útil para o usuário. Não invente informações, apenas utilize os dados fornecidos.
+    `;
 
     const resposta = await ia.models.generateContent({
       model: "gemini-3.1-flash-lite",
