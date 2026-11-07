@@ -41,6 +41,7 @@ function criarGastos(){
       btnGastos.style.cursor = "not-allowed";
     }
     overlay.style.display = "none";
+    input.value = "";
   });
 }
 

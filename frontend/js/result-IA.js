@@ -12,10 +12,22 @@ function calcularDespesas() {
   return totalDespesas;
 }
 
+function gastosDetalhados(){
+  const camposDespesas = document.querySelectorAll(".gastos input[type='number']");
+  return Array.from(camposDespesas).map((campo) => {
+    const valor = parseFloat(campo.value);
+    if (!isNaN(valor)) {
+      return { nome: campo.className, valor: valor };
+    }
+    return null;
+  }).filter(Boolean);
+}
+
 async function gerarSituacao() {
   const campoDescricao = document.getElementById("resposta-ia");
   const campoRenda = document.getElementById("renda");
   const resultadoDespesas = calcularDespesas();
+  const detalheDespesas = gastosDetalhados();
   const resultadoRenda = Number(campoRenda?.value);
 
   if (!campoDescricao || !Number.isFinite(resultadoRenda) || resultadoRenda < 0) {
@@ -34,6 +46,7 @@ async function gerarSituacao() {
       body: JSON.stringify({
         renda: resultadoRenda,
         despesas: resultadoDespesas,
+        valoresDetalhados: detalheDespesas
       })
     });
 
