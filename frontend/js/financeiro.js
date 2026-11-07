@@ -1,6 +1,7 @@
 function criarGastos(){
   const btnGastos = document.getElementById("btn-add-gastos");
   const containerGastos = document.getElementById("gastos");
+  const containerRenda = document.querySelector(".ganhos");
   const limitGastos = 5
   const overlay = document.getElementById("overlay");
   const btnSalvarGasto = document.getElementById("btn-salvar-gasto");
@@ -12,7 +13,7 @@ function criarGastos(){
   })
   
   btnSalvarGasto.addEventListener("click", () => {
-    const inputGasto = document.getElementById("novo-gasto").value;
+    const inputValue = document.getElementById("novo-gasto").value;
     const input = document.getElementById("novo-gasto");
     input.focus();
     input.addEventListener('input', () => {
@@ -25,16 +26,30 @@ function criarGastos(){
       return;
     }
 
+    const tipoCadastro = document.querySelector('input[name="tipo-cadastro"]:checked')?.value;
+
+    if (tipoCadastro === "gasto"){
     const novoGasto = document.createElement("div");
-    const idGasto = `${inputGasto}-${containerGastos.children.length + 1}`;
+    const idGasto = `${inputValue}-${containerGastos.children.length + 1}`;
 
     novoGasto.classList.add("gastos");
     novoGasto.innerHTML = `
-      <label for="${idGasto}">${inputGasto} (R$)</label>
-      <input class="${inputGasto}" type="number" data-gasto-adicional="true" id="${idGasto}" min="0" step="0.01" value="0" />
+      <label for="${idGasto}">${inputValue} (R$)</label>
+      <input class="${inputValue}" type="number" data-gasto-adicional="true" id="${idGasto}" min="0" step="0.01" value="0" />
     `;
     containerGastos.appendChild(novoGasto);
 
+    } else if (tipoCadastro === "renda"){
+      const novaRenda = document.createElement("div");
+      const idRenda = `${inputValue}-${containerRenda.querySelectorAll("input").length + 1}`;
+
+      novaRenda.classList.add("ganho-adicional");
+      novaRenda.innerHTML = `
+      <label for="${idRenda}">${inputValue} (R$)</label>
+      <input class="${inputValue}" type="number" data-renda-adicional="true" id="${idRenda}" min="0" step="0.01" value="0" />
+    `;
+      containerRenda.appendChild(novaRenda);
+    }
     if(gastosCriados + 1 >= limitGastos) {
       btnGastos.disabled = true;
       btnGastos.textContent = "Limite atingido";
