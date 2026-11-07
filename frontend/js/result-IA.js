@@ -40,13 +40,10 @@ async function gerarSituacao() {
     const dados = await resposta.json();
 
     if (!resposta.ok) {
-      // Mantém visível o código HTTP retornado pelo backend.
-      // Ex.: 429 quando a cota do Gemini for atingida.
       console.error(dados.mensagem || `Erro ${resposta.status} — não foi possível gerar a descrição.`);
       return;
     }
 
-    // A resposta da IA passa diretamente para o campo descrição.
     campoDescricao.value = dados.mensagem;
 
   } catch (erro) {
