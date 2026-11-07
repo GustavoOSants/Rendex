@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Financeiro | Rendex</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>rende<span>x</span></h1>
+      <nav>
+        <a href="#dashboard">Meu Financeiro</a>
+      </nav>
+    </header>
+
+    <main id="dashboard">
+      <section class="introducao">
+        <h2>Dashboard</h2>
+        <p>Coloque o que você ganha e o que você gasta (nada sai do seu navegador). No final você
+        recebe um diagnóstico, uma planilha pronta pra baixar e pode tirar dúvidas com a IA.</p>
+      </section>
+
+      <div class="dashboard-container">
+        <section class="card">
+          <div class="card-header">
+            <h3>Suas finanças</h3>
+            <button class="btn-primario add-gastos" id="btn-add-gastos">Adicionar</button>
+          </div>
+
+          <form id="form-financeiro">
+            <div class="ganhos">
+              <h4>Ganhos</h4>
+              <label for="renda">Salário / renda líquida (R$)</label>
+              <input class="renda" type="number" id="renda" min="0" step="0.01" required />
+            </div>
+
+            <div class="gastos" id="gastos">
+              <h4>Gastos</h4>
+
+              <label for="moradia">Moradia (R$)</label>
+              <input class="moradia" type="number" id="moradia" min="0" step="0.01" value="0" />
+              
+              <label for="transporte">Transporte (R$)</label>
+              <input class="transporte" type="number" id="transporte" min="0" step="0.01" value="0" />
+              
+              <label for="lazer">Lazer (R$)</label>
+              <input class="lazer" type="number" id="lazer" min="0" step="0.01" value="0" />
+            </div>
+              <div class="btn-container">
+                <button style="margin-right: 8px;" type="submit" class="btn-primario">Minha situação</button>
+                <button class="btn-secundario">Baixar planilha (.xlsx)</button>
+              </div>
+              <!-- <textarea id="resultado-ia" rows="4" readonly placeholder="Sua situação financeira aparecerá aqui"></textarea> -->
+          </form>
+        </section>
+
+        <section class="resultados">
+          <div class="card">
+            <h3>Pergunte para à IA ✨</h3>
+
+            <p>Oi! Pergunta o que quiser sobre o suas finanças ou dúvidas sobre o mundo
+            financeiro.</p>
+
+            <div class="input-IA">
+              <input type="text" id="pergunta-ia" placeholder="Ex: Com meu salário qual seria o melhor investimento?" />
+              <button class="btn-primario" id="btn-analise-ia" type="button" onclick="gerarRaioX()">Enviar</button>
+            </div>
+
+            <textarea id="resposta-ia" rows="4" cols="50" readonly placeholder="Pergunte e a IA irá responder sua dúvida"></textarea>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/financeiro.js"></script>
+    <!-- <script src="js/dashboard.js"></script> -->
+    <script src="js/result-IA.js"></script>
+  </body>
+</html>
