@@ -151,6 +151,12 @@ input:focus {
   border-color: var(--verde);
   box-shadow: 0 0 0 2px #1FD18B22;
 }
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .ganhos{
   & h4{
     margin-bottom: 12px;
@@ -169,7 +175,7 @@ input:focus {
     margin-bottom: 18px;
   }
 }
-.lazer {
+.gastos:last-child {
   margin-bottom: 20px;
 }
 
