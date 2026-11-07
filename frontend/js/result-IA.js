@@ -1,19 +1,24 @@
-function obterValorCampo(id) {
-  const campo = document.getElementById(id);
-
-  if (!campo) {
-    return "";
-  }
-
-  return String(campo.value ?? campo.textContent ?? "").trim();
+function calcularDespesas() {
+  const camposDespesas = document.querySelectorAll(".gastos input[type='number']");
+  let totalDespesas = 0;
+  
+  camposDespesas.forEach((campo) => {
+    const valor = parseFloat(campo.value);
+    if (!isNaN(valor)) {
+      totalDespesas += valor;
+    }
+  });
+  
+  return totalDespesas;
 }
 
-async function gerarRaioX() {
-  const campoDescricao = document.getElementById("resultado-ia");
-  const resultadoRenda = obterValorCampo("resultado-renda");
-  const resultadoDespesas = obterValorCampo("resultado-despesas");
+async function gerarSituacao() {
+  const campoDescricao = document.getElementById("resposta-ia");
+  const campoRenda = document.getElementById("renda");
+  const resultadoDespesas = calcularDespesas();
+  const resultadoRenda = Number(campoRenda?.value);
 
-  if (!resultadoRenda || !resultadoDespesas) {
+  if (!campoDescricao || !Number.isFinite(resultadoRenda) || resultadoRenda < 0) {
     console.error("Preencha os campos de renda e despesas antes de gerar a descrição.");
     return;
   }
@@ -21,7 +26,7 @@ async function gerarRaioX() {
   campoDescricao.disabled = true;
 
   try {
-    const resposta = await fetch("/api/ia/descricao", {
+    const resposta = await fetch("http://localhost:3000/api/ia/gerar-descricao", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +47,7 @@ async function gerarRaioX() {
     }
 
     // A resposta da IA passa diretamente para o campo descrição.
-    campoDescricao.value = dados.descricao;
+    campoDescricao.value = dados.mensagem;
 
   } catch (erro) {
     console.error(erro);
@@ -51,3 +56,8 @@ async function gerarRaioX() {
     campoDescricao.disabled = false;
   }
 }
+
+document.getElementById("form-financeiro").addEventListener("submit", (event) => {
+    event.preventDefault();
+    gerarSituacao();
+  });
