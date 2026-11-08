@@ -1,28 +1,31 @@
 function criarGastos(){
-  const btnGastos = document.getElementById("btn-add-gastos");
+  const btnAdd = document.getElementById("btn-add");
   const containerGastos = document.getElementById("gastos");
   const containerRenda = document.querySelector(".ganhos");
   const limitGastos = 5
   const overlay = document.getElementById("overlay");
-  const btnSalvarGasto = document.getElementById("btn-salvar-gasto");
+  const btnSalvar = document.getElementById("btn-salvar");
+  const radioGasto = document.getElementById("radio-gasto");
+  const radioRenda = document.getElementById("radio-renda");
+  const descricaoGasto = document.getElementById("descricao-gasto");
+  const descricaoRenda = document.getElementById("descricao-renda");
   
-  if (!btnGastos || !containerGastos) return;
-  
-  btnGastos.addEventListener("click", () => {
+  btnAdd.addEventListener("click", () => {
     overlay.style.display = "flex";
   })
   
-  btnSalvarGasto.addEventListener("click", () => {
-    const inputValue = document.getElementById("novo-gasto").value;
-    const input = document.getElementById("novo-gasto");
-    input.focus();
-    input.addEventListener('input', () => {
-      this.value = this.value.replace(/[0-9]/g, '');
-    });
+  btnSalvar.addEventListener("click", () => {
+    const inputValue = document.getElementById("nova-info").value;
+    const input = document.getElementById("nova-info");
 
+    const rendasCriadas = containerRenda.querySelectorAll('input[data-renda-adicional="true"]').length;
     const gastosCriados = containerGastos.querySelectorAll('input[data-gasto-adicional="true"]').length;
     if (gastosCriados >= limitGastos) {
       alert(`Você atingiu o limite de ${limitGastos} gastos adicionais.`);
+      return;
+    }
+    if (rendasCriadas >= limitGastos) {
+      alert(`Você atingiu o limite de ${limitGastos} rendas adicionais.`);
       return;
     }
 
@@ -30,30 +33,57 @@ function criarGastos(){
 
     if (tipoCadastro === "gasto"){
     const novoGasto = document.createElement("div");
-    const idGasto = `${inputValue}-${containerGastos.children.length + 1}`;
+    const idlengthGasto = containerGastos.querySelectorAll("input").length + 1
+    const idGasto = `${inputValue}-${idlengthGasto}`;
 
-    novoGasto.classList.add("gastos");
+    novoGasto.classList.add("gastos-adicional");
     novoGasto.innerHTML = `
       <label for="${idGasto}">${inputValue} (R$)</label>
       <input class="${inputValue}" type="number" data-gasto-adicional="true" id="${idGasto}" min="0" step="0.01" value="0" />
+      <i
+        class="fa-solid fa-trash btn-excluir-input"
+        data-id="${idGasto}"
+        role="button"
+        tabindex="0"
+        aria-label="Excluir gasto"
+        title="Excluir gasto"
+        style="position: relative; bottom: 3.2rem; left: 27.6rem;"
+        >
+      </i>
     `;
     containerGastos.appendChild(novoGasto);
 
     } else if (tipoCadastro === "renda"){
       const novaRenda = document.createElement("div");
-      const idRenda = `${inputValue}-${containerRenda.querySelectorAll("input").length + 1}`;
+      const idlengthRenda = containerRenda.querySelectorAll("input").length + 1
+      const idRenda = `${inputValue}-${idlengthRenda}`;
 
       novaRenda.classList.add("ganho-adicional");
       novaRenda.innerHTML = `
       <label for="${idRenda}">${inputValue} (R$)</label>
       <input class="${inputValue}" type="number" data-renda-adicional="true" id="${idRenda}" min="0" step="0.01" value="0" />
+      <i
+        class="fa-solid fa-trash btn-excluir-input"
+        data-id="${idRenda}"
+        role="button"
+        tabindex="0"
+        aria-label="Excluir renda"
+        title="Excluir renda"
+        style="position: relative; bottom: 3.2rem; left: 27.6rem;"
+        >
+      </i>
     `;
       containerRenda.appendChild(novaRenda);
     }
     if(gastosCriados + 1 >= limitGastos) {
-      btnGastos.disabled = true;
-      btnGastos.textContent = "Limite atingido";
-      btnGastos.style.cursor = "not-allowed";
+      radioGasto.disabled = true;
+      descricaoGasto.style.display = "block";
+      descricaoGasto.textContent = "Limite atingido";
+    }
+    if(rendasCriadas + 1 >= limitGastos) {
+      radioRenda.disabled = true;
+      descricaoRenda.style.display = "block";
+      descricaoRenda.textContent = "Limite atingido";
     }
     overlay.style.display = "none";
     input.value = "";
@@ -124,4 +154,15 @@ function analisarFinancas(dados) {
   };
 }
 
+function excluirInput(){
+  document.addEventListener("click", (event) => {
+    const botao = event.target.closest(".btn-excluir-input");
+    if (!botao) return;
+
+    const input = document.getElementById(botao.dataset.id);
+    input?.closest(".gastos-adicional, .ganho-adicional")?.remove();
+  });
+}
+
 criarGastos();
+excluirInput();

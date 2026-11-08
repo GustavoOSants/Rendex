@@ -7,6 +7,7 @@
     <title>Dashboard Financeiro | Rendex</title>
 
     <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
 
   <body>
@@ -28,7 +29,7 @@
         <section class="card">
           <div class="card-header">
             <h3>Suas finanças</h3>
-            <button class="btn-primario add-gastos" id="btn-add-gastos">Adicionar</button>
+            <button class="btn-primario add-gastos" id="btn-add">Adicionar</button>
           </div>
 
           <form id="form-financeiro">
@@ -43,12 +44,13 @@
 
               <label for="moradia">Moradia (R$)</label>
               <input class="moradia" type="number" id="moradia" min="0" step="0.01" value="0" />
-              
+
               <label for="transporte">Transporte (R$)</label>
               <input class="transporte" type="number" id="transporte" min="0" step="0.01" value="0" />
-              
+
               <label for="lazer">Lazer (R$)</label>
               <input class="lazer" type="number" id="lazer" min="0" step="0.01" value="0" />
+
             </div>
               <div class="btn-container">
                 <button style="margin-right: 8px;" type="submit" class="btn-primario">Minha situação</button>
@@ -82,18 +84,20 @@
               <span>Tipo de categoria</span>
 
               <label class="opcao-checkbox-gasto">
-                <input type="radio" name="tipo-cadastro" value="gasto" checked />
+                <input type="radio" name="tipo-cadastro" id= "radio-gasto"value="gasto" checked />
                 <span>Gasto</span>
+                <p id="descricao-gasto" style="display: none;"></p>
               </label>
               <label class="opcao-checkbox-renda">
-                <input type="radio" name="tipo-cadastro" value="renda" />
+                <input type="radio" name="tipo-cadastro" id="radio-renda" value="renda" />
                 <span>Renda</span>
+                <p id="descricao-renda" style="display: none;"></p>
               </label>
             </div>
             
             <label for="">Nome da categoria</label>
-            <input type="text" id="novo-gasto" placeholder="Ex: Alimentação" />
-            <button type="button" class="btn-primario" id="btn-salvar-gasto">Salvar</button>
+            <input type="text" id="nova-info" placeholder="Ex: Alimentação" />
+            <button type="button" class="btn-primario" id="btn-salvar">Salvar</button>
           </div>
         </div>
       </div>
