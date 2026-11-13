@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+
 :root {
   --bg-page: #0e1624;
   --bg-navbar: #0b111c;
@@ -8,6 +10,16 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
+
+  /* Cabeçalho (igual ao index) */
+  --header-bg: rgba(13, 21, 38, 0.92);
+  --header-borda: #1f2b4a;
+  --header-texto: #f1f5f9;
+  --header-muted: #8b97b3;
+  --header-verde: #22d494;
+  --header-laranja: #ff5a3c;
+  --container: 1152px;
+  --gutter: 24px;
 }
 
 * {
@@ -29,32 +41,36 @@ body {
   flex-direction: column;
 }
 
-.navbar {
-  background-color: var(--bg-navbar);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 16px 24px;
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  line-height: 1.5;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--header-borda);
 }
 
-.navbar-container {
-  max-width: 1120px;
-  margin: 0 auto;
+.navbar {
+  width: min(var(--container), 100% - var(--gutter) * 2);
+  height: 60px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
 }
 
 .logo {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--header-texto);
   text-decoration: none;
-  letter-spacing: -0.5px;
 }
 
 .logo span {
-  color: #f95715;
+  color: var(--header-laranja);
 }
 
 .divider {
@@ -68,34 +84,51 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .nav-links a {
-  color: var(--text-secondary);
+  padding: 7px 14px;
+  border-radius: 8px;
+  color: var(--header-muted);
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--text-primary);
+  color: var(--header-texto);
 }
 
 .nav-links a.active {
-  background-color: var(--accent-green);
-  color: #052e16;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 6px;
+  background-color: var(--header-verde);
+  color: #04130d;
 }
 
-.nav-links a.active:hover {
-     background-color: #1a9c4a;
+@media (max-width: 1024px) {
+  .nav-links a {
+    padding: 7px 10px;
+  }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  .navbar {
+    height: 52px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* CONTEÚDO */
 
 .container {
   max-width: 1060px;
