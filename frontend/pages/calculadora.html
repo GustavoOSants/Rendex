@@ -1,150 +1,182 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style-calculadora.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Rendex | Calculadora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style-calculadora.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Rendex | Calculadora</title>
 </head>
 
 <body>
 
-    <header class="header">
-        <h1 class="logo">Rend<span>ex</span></h1>
+  <header class="header">
+    <h1 class="logo">Rende<span>x</span></h1>
 
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Trilha de Aprendizado</a></li>
-                <li><a href="#" class="active">Calculadora</a></li>
-                <li><a href="#">Radar de Notícias</a></li>
-                <li><a href="#">Sair das Dívidas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="/frontend/pages/dashboard.html">Dashboard</a></li>
+        <li><a href="#">Trilha de Aprendizado</a></li>
+        <li><a href="#" class="active">Calculadora</a></li>
+        <li><a href="/frontend/pages/pagina-de-noticia.html">Radar de Notícias</a></li>
+        <li><a href="#">Sair das Dívidas</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="main-container">
+  <main class="main-container">
 
-        <!-- Título -->
-        <div class="container-titulo">
-            <h2>Calculadora de Juros Compostos</h2>
-            <p>
-                Simule o rendimento da sua aplicação comparando os principais títulos de renda fixa e a
-                <br class="desktop-break">
-                poupança, já descontando a tabela regressiva do IR e a inflação oficial.
-            </p>
+    <!-- Título -->
+    <div class="container-titulo">
+      <h2>Calculadora de Juros Compostos</h2>
+      <p>
+        Simule o rendimento da sua aplicação comparando os principais títulos de renda fixa e a
+        <br class="desktop-break">
+        poupança, já descontando a tabela regressiva do IR e a inflação oficial.
+      </p>
+    </div>
+
+    <!-- Área principal -->
+    <section class="area-simulacao">
+
+      <!-- Formulário -->
+      <form id="calculadora" class="formulario">
+
+        <h3>Parâmetros da simulação</h3>
+
+        <div class="campo">
+          <label for="capitalInicial">Quanto você tem para começar (R$)</label>
+          <input type="number" id="capitalInicial" placeholder="1000">
         </div>
 
-        <!-- Área principal -->
-        <section class="area-simulacao">
-
-            <!-- Formulário -->
-            <form id="calculadora" class="formulario">
-
-                <h3>Parâmetros da simulação</h3>
-
-                <div class="campo">
-                    <label for="capitalInicial">Quanto você tem para começar (R$)</label>
-                    <input type="number" id="capitalInicial" placeholder="1000">
-                </div>
-
-                <div class="campo">
-                    <label for="taxa">Qual rendimento da aplicação</label>
-                    <input type="number" id="taxa" placeholder="13%">
-                </div>
-
-                <div class="campo">
-                    <label for="tempo">Por quantos anos</label>
-                    <input type="number" id="tempo" placeholder="24">
-                </div>
-
-                <div class="campo">
-                    <label for="mensalidade">Quanto vai adicionar por mês</label>
-                    <input type="number" id="mensalidade" placeholder="150">
-                </div>
-
-                <button type="submit" class="btn-calcular">Calcular</button>
-                <button type="button" class="btn-comparar">Comparar</button>
-
-            </form>
-
-            <!-- Resultados e gráfico -->
-            <div class="resultados">
-
-                <div class="capital-aportado">
-                    <p>Total de capital aportado no período</p>
-                    <strong>R$ 8.200,00</strong>
-                </div>
-
-                <div class="grafico-card">
-
-                    <h3>Gráfico</h3>
-
-                    <div class="grafico-container">
-                        <div class="barra" style="height: 25%;"></div>
-                        <div class="barra" style="height: 40%;"></div>
-                        <div class="barra" style="height: 55%;"></div>
-                        <div class="barra" style="height: 70%;"></div>
-                        <div class="barra" style="height: 90%;"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Tabela -->
-        <section class="tabela-section">
-
-            <h3>Tabela - Investimento 1</h3>
-
-            <div class="tabela-container">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Mês</th>
-                            <th>Juros</th>
-                            <th>Juros total</th>
-                            <th>Total acumulado</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                        <tr><td></td><td></td><td></td><td></td></tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="#">Linktree</a>
-            <a href="#">Github</a>
-            <a href="#">Patrocinadores</a>
+        <div class="campo">
+          <label for="taxa">Qual rendimento da aplicação</label>
+          <input type="number" id="taxa" placeholder="13%">
         </div>
 
-        <p>© 2026 Todos os direitos reservados</p>
-    </footer>
+        <div class="campo">
+          <label for="tempo">Por quantos anos</label>
+          <input type="number" id="tempo" placeholder="24">
+        </div>
 
-    <script src="calculadora.js"></script>
+        <div class="campo">
+          <label for="mensalidade">Quanto vai adicionar por mês</label>
+          <input type="number" id="mensalidade" placeholder="150">
+        </div>
+
+        <button type="submit" class="btn-calcular">Calcular</button>
+        <button type="button" class="btn-comparar">Comparar</button>
+
+      </form>
+
+      <!-- Resultados e gráfico -->
+      <div class="resultados">
+
+        <div class="capital-aportado">
+          <p>Total de capital aportado no período</p>
+          <strong>R$ 8.200,00</strong>
+        </div>
+
+        <div class="grafico-card">
+
+          <h3>Gráfico</h3>
+
+          <div class="grafico-container">
+            <div class="barra" style="height: 25%;"></div>
+            <div class="barra" style="height: 40%;"></div>
+            <div class="barra" style="height: 55%;"></div>
+            <div class="barra" style="height: 70%;"></div>
+            <div class="barra" style="height: 90%;"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Tabela -->
+    <section class="tabela-section">
+
+      <h3>Tabela - Investimento 1</h3>
+
+      <div class="tabela-container">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Mês</th>
+              <th>Juros</th>
+              <th>Juros total</th>
+              <th>Total acumulado</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Linktree</a>
+      <a href="#">Github</a>
+      <a href="#">Patrocinadores</a>
+    </div>
+
+    <p>© 2026 Todos os direitos reservados</p>
+  </footer>
+
+  <script src="calculadora.js"></script>
 
 </body>
+
 </html>
