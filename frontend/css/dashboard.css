@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
 
 /* ==========================================
    RENDEX | DASHBOARD FINANCEIRO
@@ -16,6 +17,16 @@
   --laranja-escuro: #7A2E1D;
   --apoio: #1C3A3A;
   --campo: #0A1120;
+
+  /* Cabeçalho (igual ao index) */
+  --header-bg: rgba(13, 21, 38, 0.92);
+  --header-borda: #1f2b4a;
+  --header-texto: #f1f5f9;
+  --header-muted: #8b97b3;
+  --header-verde: #22d494;
+  --header-laranja: #ff5a3c;
+  --container: 1152px;
+  --gutter: 24px;
 }
 
 /* CONFIGURAÇÕES GERAIS */
@@ -36,35 +47,87 @@ body {
 
 /* CABEÇALHO */
 
-header {
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--header-borda);
+}
+
+.navbar {
+  width: min(var(--container), 100% - var(--gutter) * 2);
+  height: 60px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 8%;
-  border-bottom: 1px solid var(--borda);
-  background-color: var(--fundo);
 }
 
-header h1 {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--branco);
-  letter-spacing: -1px;
-}
-
-header h1 span {
-  color: var(--verde);
-}
-
-nav a {
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--header-texto);
   text-decoration: none;
-  color: var(--texto);
-  font-size: 14px;
-  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: var(--verde);
+.logo span {
+  color: var(--header-laranja);
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  padding: 7px 14px;
+  border-radius: 8px;
+  color: var(--header-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--header-texto);
+}
+
+.nav-links a.active {
+  background: var(--header-verde);
+  color: #04130d;
+}
+
+@media (max-width: 1024px) {
+  .nav-links a {
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 16px;
+  }
+
+  .navbar {
+    height: 52px;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
 
 /* CONTEÚDO PRINCIPAL */
@@ -116,7 +179,7 @@ main {
   text-transform: uppercase;
 }
 
-.overlay{
+.overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -127,21 +190,26 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  & input{
+
+  & input {
     margin-bottom: 8px;
   }
-  & button{
+
+  & button {
     position: relative;
     left: 18.50rem;
   }
 }
+
 .tipo-cadastro {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 16px 0;
 }
-.opcao-checkbox-gasto, .opcao-checkbox-renda {
+
+.opcao-checkbox-gasto,
+.opcao-checkbox-renda {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -157,6 +225,7 @@ main {
   border-color: var(--verde);
   background-color: var(--verde-escuro);
 }
+
 .opcao-checkbox-gasto:hover {
   border-color: var(--laranja);
   background-color: var(--laranja-escuro);
@@ -167,11 +236,13 @@ main {
   width: 16px;
   height: 16px;
 }
+
 .opcao-checkbox-gasto input {
   accent-color: var(--laranja);
   width: 16px;
   height: 16px;
 }
+
 /* FORMULÁRIO */
 
 form {
@@ -186,7 +257,8 @@ label {
   margin-bottom: 4px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 12px;
   background-color: var(--campo);
@@ -201,7 +273,7 @@ input, textarea {
 textarea {
   resize: vertical;
   min-height: 80px;
-  margin-top:20px
+  margin-top: 20px
 }
 
 input:focus {
@@ -209,29 +281,34 @@ input:focus {
   box-shadow: 0 0 0 2px #1FD18B22;
 }
 
-.card-header{
+.card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.ganhos{
-  & h4{
+
+.ganhos {
+  & h4 {
     margin-bottom: 12px;
     color: var(--verde);
   }
-  & input{
+
+  & input {
     margin-bottom: 16px;
   }
 }
-.gastos{
-  & h4{
+
+.gastos {
+  & h4 {
     margin-bottom: 12px;
     color: var(--laranja);
   }
-  & input{
+
+  & input {
     margin-bottom: 18px;
   }
 }
+
 .gastos:last-child {
   margin-bottom: 20px;
 }
@@ -262,6 +339,7 @@ button {
   border: 2px solid var(--verde);
   color: var(--verde);
 }
+
 .btn-secundario:hover {
   background-color: #18b87824;
   transform: translateY(-2px);
@@ -272,6 +350,7 @@ button:disabled {
   cursor: not-allowed;
   transform: none;
 }
+
 /* INTELIGÊNCIA ARTIFICIAL */
 
 .input-IA {
@@ -289,10 +368,6 @@ button:disabled {
   main {
     width: 92%;
     margin: 30px auto;
-  }
-
-  header {
-    padding: 18px 4%;
   }
 }
 
