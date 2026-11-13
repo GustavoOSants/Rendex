@@ -1,453 +1,239 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rendex</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="navbar">
-        <a href="#inicio" class="logo">rende<span>x</span></a>
-        <div class="nav-links">
-          <a href="#inicio" class="active">Início</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#trilha">Trilha de Aprendizagem</a>
-          <a href="#calculadora">Calculadora</a>
-          <a href="#noticias">Radar de Notícias</a>
-          <a href="#dividas">Sair das Dívidas</a>
-        </div>
-      </nav>
-    </header>
 
-    <main>
-      <!-- INÍCIO -->
-      <section class="home" id="inicio">
-        <div class="hero">
-          <div class="hero-content">
-            <h1>rende<span>x</span></h1>
-            <p class="hero-description">
-              Pra quem tá endividado, pra quem tá começando agora e pra quem só
-              quer entender melhor a grana. Aprenda a investir do zero, descubra
-              pra onde vai seu dinheiro e saia das dívidas, com números de
-              verdade e sem enrolação de banco.
-            </p>
-            <div class="hero-buttons">
-              <a href="#dashboard" class="btn green">Minha situação →</a>
-              <a href="#dividas" class="btn orange">Tô no vermelho</a>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendex</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-          <div class="featured-card">
-            <span class="featured-label">DESTAQUE RENDEX</span>
-            <h3>Saúde Financeira da GenZ</h3>
-            <p>
-              Segundo dados recentes da Serasa e Banco Central, mais de 80
-              milhões de brasileiros enfrentam restrições de crédito. O Rendex
-              traz métricas limpas pra você zerar pendências e multiplicar
-              patrimônio.
-            </p>
-            <div class="featured-footer">
-              <span>Copom &amp; IBGE Atualizados</span>
-              <strong>100% Gratuito</strong>
-            </div>
-          </div>
-        </div>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a class="logo" href="#inicio">Rende<span>x</span></a>
+      <div class="nav-links">
+        <a class="active" href="#inicio">Início</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#trilha">Trilha de Aprendizado</a>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#noticias">Radar de Notícias</a>
+        <a href="#dividas">Sair das Dívidas</a>
+      </div>
+    </nav>
+  </header>
 
-        <div class="home-bottom">
-          <div class="section-title">
-            <h2>Por onde começar no Rendex?</h2>
-            <p>Explore nossas ferramentas e aprenda no seu ritmo.</p>
-          </div>
-
-          <div class="cards-grid">
-            <a href="#trilha" class="info-card">
-              <h3>Quiz de Finanças ↓</h3>
-              <p>
-                6 módulos completos: reserva de emergência, juros, renda fixa,
-                bolsa de valores, IR e prevenção de golpes.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-
-            <a href="#dashboard" class="info-card">
-              <h3>Dashboard</h3>
-              <p>
-                Preencha seus ganhos e gastos, descubra pra onde vai sua grana e
-                baixe sua planilha pronta.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-
-            <a href="#calculadora" class="info-card">
-              <h3>Calculadora de juros compostos ↓</h3>
-              <p>
-                Simule Tesouro Selic, CDB, LCI/LCA e Poupança lado a lado,
-                descontando IR e inflação.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-
-            <a href="#trilha" class="info-card">
-              <h3>Quiz de Investimentos</h3>
-              <p>
-                Principais indicadores econômicos e matérias completas sobre
-                Selic, inflação e endividamento.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-
-            <a href="#dividas" class="info-card">
-              <h3>Como sair das dívidas</h3>
-              <p>
-                Simulador de tempo de quitação, orientações sobre o Desenrola
-                Brasil e plano prático de ataque em 6 passos.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-
-            <a href="#noticias" class="info-card">
-              <h3>Radar de notícias ↓</h3>
-              <p>
-                Principais indicadores econômicos e matérias completas sobre
-                Selic, inflação e endividamento.
-              </p>
-              <span class="card-link">Ir para seção ↓</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- DASHBOARD -->
-      <section class="dashboard" id="dashboard">
-        <div class="dashboard-container">
-          <div class="section-heading">
-            <h2>Dashboard</h2>
-            <p>
-              Coloque o que você ganha e o que você gasta (nada sai do seu
-              navegador). No final você recebe um diagnóstico, uma planilha
-              pronta pra baixar e pode tirar dúvidas com a IA.
-            </p>
-          </div>
-
-          <div class="dashboard-grid">
-            <div class="finance-card">
-              <div class="card-header">
-                <h3>Suas finanças</h3>
-                <button class="small-btn" type="button">Adicionar</button>
-              </div>
-
-              <div class="finance-group gains">
-                <h4>GANHOS</h4>
-                <label for="renda">Salário / renda líquida (R$)</label>
-                <input id="renda" type="number" value="3000" placeholder="0" />
-              </div>
-
-              <div class="finance-group expenses">
-                <h4>GASTOS</h4>
-
-                <label for="moradia">Moradia (R$)</label>
-                <input id="moradia" type="number" value="900" placeholder="0" />
-
-                <label for="transporte">Transporte (R$)</label>
-                <input
-                  id="transporte"
-                  type="number"
-                  value="200"
-                  placeholder="0"
-                />
-
-                <label for="lazer">Lazer, delivery, streaming (R$)</label>
-                <input id="lazer" type="number" value="700" placeholder="0" />
-              </div>
-
-              <div class="finance-actions">
-                <button class="btn green" type="button">Minha Situação</button>
-                <button class="btn green-outline" type="button">
-                  Baixar planilha (.xlsx)
-                </button>
-              </div>
-            </div>
-
-            <div class="ai-card">
-              <h3>Pergunte à IA</h3>
-              <p>
-                Oi! Pergunta o que quiser sobre suas finanças ou dúvidas sobre o
-                mundo financeiro.
-              </p>
-
-              <div class="ai-question-row">
-                <input
-                  type="text"
-                  aria-label="Sua pergunta para a IA"
-                  placeholder="Ex: Com meu salário qual seria o melhor investimento?"
-                />
-                <button class="btn green" type="button">Enviar</button>
-              </div>
-
-              <textarea
-                aria-label="Resposta da IA"
-                placeholder="Pergunte e a IA irá responder sua dúvida"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TRILHA -->
-      <section class="extra-section" id="trilha">
-        <div class="section-heading">
-          <h2>Trilha de <span>aprendizagem</span></h2>
+  <main>
+    <section class="home" id="inicio">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1>Rende<span>x</span></h1>
           <p>
-            Siga uma jornada prática e direta, estruturada com seis módulos na
-            ordem correta. Vá marcando o que já viu para acompanhar sua
-            evolução.
+            Pra quem tá endividado, pra quem tá começando agora e pra quem só
+            quer entender melhor a grana. Aprenda a investir do zero, descubra
+            pra onde vai seu dinheiro e saia das dívidas, com números de
+            verdade e sem enrolação de banco.
           </p>
-        </div>
-
-        <div class="learning-grid">
-          <article class="learning-card">
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-              alt="Finanças básicas"
-            />
-            <div class="learning-content">
-              <span class="module-icon">▣</span>
-              <div>
-                <h3>Quiz Finanças Básicas</h3>
-                <small>Módulo 1</small>
-                <p>
-                  Organize suas finanças, entenda seus gastos, receitas e
-                  orçamento.
-                </p>
-                <a href="#" class="btn green">Iniciar módulo →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="learning-card">
-            <img
-              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
-              alt="Investimentos"
-            />
-            <div class="learning-content">
-              <span class="module-icon">▥</span>
-              <div>
-                <h3>Quiz Investimentos</h3>
-                <small>Módulo 2</small>
-                <p>Conheça os primeiros passos para investir.</p>
-                <a href="#" class="btn green">Iniciar módulo →</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CALCULADORA -->
-      <section class="extra-section" id="calculadora">
-        <div class="section-heading">
-          <h2>Calculadora de Juros Compostos</h2>
-          <p>Simule o rendimento da sua aplicação colocando os dados abaixo.</p>
-        </div>
-
-        <div class="calculator-layout">
-          <div class="calculator-form">
-            <h3>Parâmetros da simulação</h3>
-
-            <label>Quanto você tem pra começar (R$)</label>
-            <input type="number" value="1000" />
-
-            <label>Quanto vai guardar por mês (R$)</label>
-            <input type="number" value="300" />
-
-            <label>Por quantos meses</label>
-            <input type="number" value="24" />
-
-            <label>Quanto vai adicionar por mês</label>
-            <input type="number" value="150" />
-
-            <button class="btn green">Calcular</button>
-          </div>
-
-          <div class="calculator-result">
-            <div class="total-card">
-              <span>Total de capital aportado no período</span>
-              <strong>R$ 8.200,00</strong>
-            </div>
-
-            <div class="chart-card">
-              <div class="chart-bars">
-                <div style="height: 40%"></div>
-                <div style="height: 53%"></div>
-                <div style="height: 65%"></div>
-                <div style="height: 77%"></div>
-                <div style="height: 90%"></div>
-              </div>
-            </div>
+          <div class="actions">
+            <a class="button primary" href="#dashboard">Minha situação →</a>
+            <a class="button danger" href="#dividas">Tô no vermelho</a>
           </div>
         </div>
-      </section>
-
-      <!-- NOTÍCIAS -->
-      <section class="extra-section" id="noticias">
-        <div class="section-heading">
-          <h2>Radar Rendex de Notícias</h2>
+        <article class="highlight">
+          <small>DESTAQUE RENDEX</small>
+          <h2>Saúde Financeira da GenZ</h2>
           <p>
-            O que tá rolando no mercado financeiro e na economia real. Clique
-            pra ler a matéria original.
+            Segundo dados recentes da Serasa e Banco Central, mais de 80
+            milhões de brasileiros enfrentam restrições de crédito. O Rendex
+            traz métricas limpas pra você zerar pendências e multiplicar patrimônio.
           </p>
-        </div>
-
-        <div class="news-grid">
-          <article class="news-card">
-            <span class="news-tag">Juros</span>
-            <h3>Copom reduz a Taxa Selic para 13,75% ao ano</h3>
-            <p>
-              Decisão do Comitê de Política Monetária reduz juros básicos em
-              0,25 ponto percentual.
-            </p>
-            <a href="#">Ler no portal original ↗</a>
-          </article>
-
-          <article class="news-card">
-            <span class="news-tag">Inflação</span>
-            <h3>
-              IPCA de setembro registra alta de 0,82% e atinge 4,58% em 12 meses
-            </h3>
-            <p>Índice de inflação oficial acelera em relação a agosto.</p>
-            <a href="#">Ler no portal original ↗</a>
-          </article>
-
-          <article class="news-card">
-            <span class="news-tag">Juros</span>
-            <h3>
-              Análise de mercado: Bradesco prevê ciclo contínuo de cortes da
-              Selic
-            </h3>
-            <p>
-              Relatório projeta trajetória decrescente da taxa básica de juros.
-            </p>
-            <a href="#">Ler no portal original ↗</a>
-          </article>
-        </div>
-
-        <div class="center-button">
-          <a href="#" class="btn green">Veja mais notícias</a>
-        </div>
-      </section>
-
-      <!-- DÍVIDAS -->
-      <section class="extra-section debts-section" id="dividas">
-        <div class="section-heading">
-          <h2>Estratégias para Eliminar Dívidas</h2>
-          <p>
-            Você não está sozinho: segundo a Serasa, são 82,8 milhões de
-            brasileiros inadimplentes. É totalmente possível sair desse ciclo
-            com método e planejamento.
-          </p>
-        </div>
-
-        <h3 class="steps-title">Plano de Ataque em 6 Passos</h3>
-
-        <div class="steps-grid">
-          <article class="step-card">
-            <h3><span>1.</span> Levantamento completo</h3>
-            <p>
-              Mapeie o credor, o saldo devedor original, a taxa de juros atual e
-              os dias em atraso.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <h3><span>2.</span> Contenção de gastos</h3>
-            <p>
-              Elimine assinaturas não essenciais e redirecione o supérfluo para
-              a dívida.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <h3><span>3.</span> Negociação oficial</h3>
-            <p>
-              Use o Serasa Limpa Nome ou o app do banco para pedir propostas com
-              desconto à vista.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <h3><span>4.</span> Substituição de passivos</h3>
-            <p>
-              Troque juros de cartão/cheque especial por uma modalidade com
-              custo efetivo menor.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <h3><span>5.</span> Escolha de estratégia</h3>
-            <p>
-              Método Avalanche (maior juros primeiro) ou Bola de Neve (menor
-              saldo primeiro).
-            </p>
-          </article>
-
-          <article class="step-card">
-            <h3><span>6.</span> Reserva mínima</h3>
-            <p>
-              Construa um fundo inicial para não voltar ao cartão em
-              imprevistos.
-            </p>
-          </article>
-        </div>
-
-        <div class="debt-info-grid">
-          <article class="debt-info-card">
-            <h3>Dois métodos reconhecidos</h3>
-            <p>
-              <strong>Método Avalanche:</strong> prioriza a dívida de juros mais
-              alto. Economiza mais dinheiro no final.
-            </p>
-            <p>
-              <strong>Método Bola de Neve:</strong> prioriza a menor dívida. As
-              vitórias rápidas ajudam a manter o plano.
-            </p>
-          </article>
-
-          <article class="debt-info-card">
-            <h3>Seus direitos garantidos por lei</h3>
-            <p>
-              <strong>Teto do rotativo:</strong> juros do cartão não podem
-              passar de 100% da dívida original (Lei 14.690/2023).
-            </p>
-            <p>
-              <strong>Prescrição de cadastro:</strong> o nome sai dos cadastros
-              após 5 anos (Súmula 323 do STJ).
-            </p>
-            <p>
-              <strong>Canais oficiais:</strong> Serasa Limpa Nome, Desenrola
-              Brasil ou app do seu banco. Cuidado com fraudes.
-            </p>
-          </article>
-        </div>
-
-        <div class="center-button">
-          <a href="#" class="btn green">
-            Veja mais sobre como sair das dívidas
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <a href="#" class="footer-linktree">Linktree</a>
-        <a href="#" class="footer-github">Github</a>
-        <a href="#" class="footer-sponsors">Patrocinadores</a>
+          <footer><span>Copom &amp; IBGE Atualizados</span><strong>100% Gratuito</strong></footer>
+        </article>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Todos os direitos reservados.</p>
+      <div class="home-links">
+        <h2>Por onde começar no Rendex?</h2>
+        <div class="link-grid">
+          <a class="link-card" href="#trilha"><b>Quiz de Finanças ↓</b><span>6 módulos completos: reserva de emergência,
+              juros, renda fixa, bolsa de valores, IR e prevenção de golpes.</span><em>Ir para seção ↓</em></a>
+          <a class="link-card" href="#dashboard"><b>Dashboard</b><span>Preencha seus ganhos e gastos, descubra pra onde
+              vai sua grana e baixe sua planilha pronta.</span><em>Ir para seção ↓</em></a>
+          <a class="link-card" href="#calculadora"><b>Calculadora de juros compostos ↓</b><span>Simule Tesouro Selic,
+              CDB, LCI/LCA e Poupança lado a lado, descontando IR e inflação.</span><em>Ir para seção ↓</em></a>
+          <a class="link-card" href="#trilha"><b>Quiz de Investimentos</b><span>Principais indicadores econômicos e
+              matérias completas sobre Selic, inflação e endividamento.</span><em>Ir para seção ↓</em></a>
+          <a class="link-card" href="#dividas"><b>Como sair das dívidas</b><span>Simulador de tempo de quitação,
+              orientações sobre o Desenrola Brasil e plano prático de ataque em 6 passos.</span><em>Ir para seção
+              ↓</em></a>
+          <a class="link-card" href="#noticias"><b>Radar de notícias ↓</b><span>Principais indicadores econômicos e
+              matérias completas sobre Selic, inflação e endividamento.</span><em>Ir para seção ↓</em></a>
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section class="section dashboard" id="dashboard">
+      <header class="section-heading">
+        <h2>Dashboard</h2>
+        <p>Coloque o que você ganha e o que você gasta (nada sai do seu navegador). No final você recebe um diagnóstico,
+          uma planilha pronta pra baixar e pode tirar dúvidas com a IA.</p>
+      </header>
+      <div class="dashboard-grid">
+        <article class="panel finances">
+          <div class="panel-heading">
+            <h3>Suas finanças</h3><button class="small danger">Adicionar</button>
+          </div>
+          <fieldset class="income">
+            <legend>GANHOS</legend><label for="income">Salário / renda líquida (R$)</label><input id="income"
+              value="3000" />
+          </fieldset>
+          <fieldset class="expenses">
+            <legend>GASTOS</legend><label for="home-cost">Moradia (R$)</label><input id="home-cost" value="900" /><label
+              for="transport">Transporte (R$)</label><input id="transport" value="200" /><label for="leisure">Lazer,
+              delivery, streaming (R$)</label><input id="leisure" value="700" />
+          </fieldset>
+          <div class="actions"><button class="button primary">Minha Situação</button><button
+              class="button outline">Baixar planilha (.xlsx)</button></div>
+        </article>
+        <article class="panel ai">
+          <h3>Pergunte à IA</h3>
+          <p>Oi! Pergunta o que quiser sobre suas finanças ou dúvidas sobre o mundo financeiro.</p>
+          <div class="question"><input placeholder="Ex: Com meu salário qual seria o melhor investimento?" /><button
+              class="button primary">Enviar</button></div>
+          <textarea placeholder="Pergunte e a IA irá responder sua dúvida"></textarea>
+        </article>
+      </div>
+    </section>
+
+    <section class="section learning" id="trilha">
+      <header class="section-heading">
+        <h2>Trilha de <span>Aprendizado</span></h2>
+        <p>Siga uma jornada prática e direta, estruturada com quatro módulos na ordem correta. Vá marcando o que já viu
+          para acompanhar sua evolução.</p>
+      </header>
+      <div class="learning-grid">
+        <article class="learning-card"><img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+            alt="Finanças básicas" />
+          <div><b>▣</b>
+            <h3>Quiz Finanças Básicas</h3><small>Módulo 1</small>
+            <p>Organize suas finanças, entenda seus gastos, receitas e orçamento.</p><a class="button primary">Iniciar
+              módulo →</a>
+          </div>
+        </article>
+        <article class="learning-card"><img
+            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
+            alt="Investimentos" />
+          <div><b>▥</b>
+            <h3>Quiz Finanças Básicas</h3><small>Módulo 2</small>
+            <p>Conheça os primeiros passos para investir.</p><a class="button primary">Iniciar módulo →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section calculator" id="calculadora">
+      <header class="section-heading">
+        <h2>Calculadora de Juros Compostos</h2>
+        <p>Simule o rendimento da sua aplicação colocando os dados abaixo.</p>
+      </header>
+      <div class="calculator-grid">
+        <article class="panel calculator-form">
+          <h3>Parâmetros da simulação</h3><label>Quanto você tem pra começar (R$)</label><input
+            value="1000" /><label>Quanto vai guardar por mês (R$)</label><input value="300" /><label>Por quantos
+            meses</label><input value="24" /><label>Quanto vai adicionar por mês</label><input value="150" /><button
+            class="button primary">Calcular</button>
+        </article>
+        <div class="result">
+          <div class="total panel"><span>Total de capital aportado no período</span><strong>R$ 8.200,00</strong></div>
+          <div class="chart panel">
+            <div class="bars"><i style="height:40%"></i><i style="height:53%"></i><i style="height:65%"></i><i
+                style="height:77%"></i><i style="height:90%"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news" id="noticias">
+      <header class="section-heading">
+        <h2>Radar Rendex de Notícias</h2>
+        <p>O que tá rolando no mercado financeiro e na economia real. Clique pra ler a matéria original.</p>
+      </header>
+      <div class="news-grid">
+        <article class="news-card"><small>Juros</small>
+          <h3>Copom reduz a Taxa Selic para 13,75% ao ano</h3>
+          <p>Decisão do Comitê de Política Monetária reduz juros básicos em 0,25 ponto percentual.</p><a>Ler no portal
+            original ↗</a>
+        </article>
+        <article class="news-card"><small>Inflação</small>
+          <h3>IPCA de setembro registra alta de 0,82% e atinge 4,58% em 12 meses</h3>
+          <p>Índice de inflação oficial acelera em relação a agosto.</p><a>Ler no portal original ↗</a>
+        </article>
+        <article class="news-card"><small>Juros</small>
+          <h3>Análise de mercado: Bradesco prevê ciclo contínuo de cortes da Selic</h3>
+          <p>Relatório projeta trajetória decrescente da taxa básica de juros.</p><a>Ler no portal original ↗</a>
+        </article>
+      </div>
+      <a class="button primary centered">Veja mais notícias</a>
+    </section>
+
+    <section class="section debts" id="dividas">
+      <header class="section-heading">
+        <h2>Estratégias para Eliminar Dívidas</h2>
+        <p>Você não está sozinho: segundo a Serasa, são 82,8 milhões de brasileiros inadimplentes. É totalmente possível
+          sair desse ciclo com método e planejamento.</p>
+      </header>
+      <h3 class="steps-title">Plano de Ataque em 6 Passos</h3>
+      <div class="steps-grid">
+        <article class="step">
+          <h3><span>1.</span> Levantamento completo</h3>
+          <p>Mapeie o credor, o saldo devedor original, a taxa de juros atual e os dias em atraso.</p>
+        </article>
+        <article class="step">
+          <h3><span>2.</span> Contenção de gastos</h3>
+          <p>Elimine assinaturas não essenciais e redirecione o supérfluo para a dívida.</p>
+        </article>
+        <article class="step">
+          <h3><span>3.</span> Negociação oficial</h3>
+          <p>Use o Serasa Limpa Nome ou o app do banco para pedir propostas com desconto à vista.</p>
+        </article>
+        <article class="step">
+          <h3><span>4.</span> Substituição de passivos</h3>
+          <p>Troque juros de cartão/cheque especial por uma modalidade com custo efetivo menor.</p>
+        </article>
+        <article class="step">
+          <h3><span>5.</span> Escolha de estratégia</h3>
+          <p>Método Avalanche (maior juros primeiro) ou Bola de Neve (menor saldo primeiro).</p>
+        </article>
+        <article class="step">
+          <h3><span>6.</span> Reserva mínima</h3>
+          <p>Construa um fundo inicial para não voltar ao cartão em imprevistos.</p>
+        </article>
+      </div>
+      <div class="rights-grid">
+        <article class="panel">
+          <h3>Dois métodos reconhecidos</h3>
+          <p><strong>Método Avalanche:</strong> prioriza a dívida de juros mais alto. Economiza mais dinheiro no final.
+          </p>
+          <p><strong>Método Bola de Neve:</strong> prioriza a menor dívida. As vitórias rápidas ajudam a manter o plano.
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Seus direitos garantidos por lei</h3>
+          <p><strong>Teto do rotativo:</strong> juros do cartão não podem passar de 100% da dívida original (Lei
+            14.690/2023).</p>
+          <p><strong>Prescrição de cadastro:</strong> o nome sai dos cadastros após 5 anos (Súmula 323 do STJ).</p>
+          <p><strong>Canais oficiais:</strong> Serasa Limpa Nome, Desenrola Brasil ou app do seu banco. Cuidado com
+            fraudes.</p>
+        </article>
+      </div>
+      <a class="button primary centered">Veja mais sobre como sair das dívidas</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><a>Linktree</a><a>Github</a><a>Patrocinadores</a></div>
+    <p>© 2026 Todos os direitos reservados.</p>
+  </footer>
+</body>
+
 </html>
