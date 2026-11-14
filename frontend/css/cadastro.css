@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
+
+:root {
+  --fundo: #0A1120;
+  --card: #131D33;
+  --borda: #26365A;
+  --verde: #1FD18B;
+  --verde-escuro: #06251A;
+  --texto: #E9EEFC;
+  --branco: #FFFFFF;
+  --azul: #7FA6FF;
+  --laranja: #FF6A4D;
+  --laranja-escuro: #7A2E1D;
+  --apoio: #1C3A3A;
+  --campo: #0A1120;
+
+  /* Cabeçalho (igual ao index) */
+  --header-bg: rgba(13, 21, 38, 0.92);
+  --header-borda: #1f2b4a;
+  --header-texto: #f1f5f9;
+  --header-muted: #8b97b3;
+  --header-verde: #22d494;
+  --header-laranja: #ff5a3c;
+  --container: 1152px;
+  --gutter: 24px;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* CABEÇALHO */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--header-borda);
+}
+
+.navbar {
+  width: min(var(--container), 100% - var(--gutter) * 2);
+  height: 60px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--header-texto);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--header-laranja);
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links a {
+  padding: 7px 14px;
+  border-radius: 8px;
+  color: var(--header-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--header-texto);
+}
+
+.nav-links a.active {
+  background: var(--header-verde);
+  color: #04130d;
+}
+
+
+.card {
+  background-color: var(--card);
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+
+  & h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--header-texto);
+  }
+
+  & p {
+    text-align: center;
+    font-size: 16px;
+    color: var(--header-muted);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
+  & label {
+    font-size: 16px;
+    color: var(--header-muted);
+  }
+
+  & input {
+    padding: .825rem;
+    border-radius: 6px;
+    background-color: var(--campo);
+    border: 1px solid var(--borda);
+    margin-bottom: 1rem;
+  }
+}
+
+.btn {
+  padding: .825rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--verde);
+  color: var(--verde-escuro);
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 52px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+.footer {
+  background-color: var(--bg-header);
+  border-top: 1px solid var(--border-color);
+
+  min-height: 90px;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--p-color);
+  font-size: 11px;
+}
+
+.footer p {
+  color: var(--p-color);
+  font-size: 11px;
+}
