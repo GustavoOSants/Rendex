@@ -1,39 +1,40 @@
-const total = document.getElementById("montante");
+let montante = 0;
 
-const form = document.querySelector("#calculadora");
+let capitalInicial = document.getElementById("capitalInicial").value;
+let taxaBruta = document.getElementById("taxa").value;
+let tempo = document.getElementById("tempo").value;
+let mensalidade = document.getElementById("mensalidade").value;
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Impede o recarregamento da página
-  const capitalInicial = document.getElementById("capitalInicial").value;
-  const taxaBruta = document.getElementById("taxa").value;
-  const tempo = document.getElementById("tempo").value;
-  const mensalidade = document.getElementById("mensalidade").value;
+const btnCalcular = document.querySelector("#calcular");
+const btnComparar = document.querySelector("#comparar");
+
+btnCalcular.addEventListener("click", function () {
+  const tabela = document.getElementById("tabela");
+
+  tabela.innerHTML = "";
+
   const taxa = taxaBruta / 100;
   const taxaMensal = (1 + taxa) ** (1 / 12) - 1;
   const tempoMes = tempo * 12;
 
-  const montante =
+  montante =
     capitalInicial * (1 + taxaMensal) ** tempoMes +
     mensalidade * (((1 + taxaMensal) ** tempoMes - 1) / taxaMensal);
+  const total = document.getElementById("montante");
 
   total.textContent = montante.toFixed(2);
 
-  let montanteMes = capitalInicial
-
+  let montanteMes = capitalInicial;
 
   for (let i = 1; i <= tempoMes; i++) {
-
-      let jurosMes = montanteMes * taxaMensal;
+    let jurosMes = montanteMes * taxaMensal;
 
     montanteMes =
       capitalInicial * (1 + taxaMensal) ** i +
       mensalidade * (((1 + taxaMensal) ** i - 1) / taxaMensal);
 
+    let jurosTotal = montanteMes - capitalInicial - mensalidade * i;
 
-    let jurosTotal = montanteMes - capitalInicial - (mensalidade*i);
-
-    const tabela = document.getElementById("tabela");
-    
     const linha = document.createElement("tr");
 
     const celulaMes = document.createElement("td");
@@ -54,7 +55,93 @@ form.addEventListener("submit", function (event) {
     linha.appendChild(celulaMontanteMes);
 
     tabela.appendChild(linha);
-
   }
-  return montante;
+});
+
+btnComparar.addEventListener("click", function () {
+  if (montante === 0) {
+    alert("Calcule um investimento antes de comparar");
+  } else {
+    const sectionTabelas = document.getElementById("tabela-section");
+    const div = document.createElement("div");
+    div.className = "tabela-container2";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = "Investimento 2";
+    div.appendChild(titulo);
+
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tr = document.createElement("tr");
+
+    const thMes = document.createElement("th");
+    thMes.textContent = "Mês";
+
+    const thJuros = document.createElement("th");
+    thJuros.textContent = "Juros";
+
+    const thJurosTotal = document.createElement("th");
+    thJurosTotal.textContent = "Juros total";
+
+    const thTotal = document.createElement("th");
+    thTotal.textContent = "Total acumulado";
+
+    tr.appendChild(thMes);
+    tr.appendChild(thJuros);
+    tr.appendChild(thJurosTotal);
+    tr.appendChild(thTotal);
+
+    thead.appendChild(tr);
+
+    table.appendChild(thead);
+
+    div.appendChild(table);
+
+    const taxa = taxaBruta / 100;
+    const taxaMensal = (1 + taxa) ** (1 / 12) - 1;
+    const tempoMes = tempo * 12;
+
+
+    let montanteMes = capitalInicial;
+
+    const tbody = document.createElement("tbody");
+
+
+  for (let i = 1; i <= tempoMes; i++) {
+    let jurosMes = montanteMes * taxaMensal;
+
+    montanteMes =
+      capitalInicial * (1 + taxaMensal) ** i +
+      mensalidade * (((1 + taxaMensal) ** i - 1) / taxaMensal);
+
+    let jurosTotal = montanteMes - capitalInicial - mensalidade * i;
+
+    const linha = document.createElement("tr");
+
+    const celulaMes = document.createElement("td");
+    celulaMes.textContent = i;
+
+    const celulaJuros = document.createElement("td");
+    celulaJuros.textContent = jurosMes.toFixed(2);
+
+    const celulaJurosTotal = document.createElement("td");
+    celulaJurosTotal.textContent = jurosTotal.toFixed(2);
+
+    const celulaMontanteMes = document.createElement("td");
+    celulaMontanteMes.textContent = montanteMes.toFixed(2);
+
+    linha.appendChild(celulaMes);
+    linha.appendChild(celulaJuros);
+    linha.appendChild(celulaJurosTotal);
+    linha.appendChild(celulaMontanteMes);
+
+    tbody.appendChild(linha);
+  }
+
+    table.appendChild(tbody);
+
+    div.appendChild(table);
+
+    sectionTabelas.appendChild(div);
+  }
 });

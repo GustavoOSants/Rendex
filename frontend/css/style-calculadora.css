@@ -309,6 +309,9 @@ body {
 
   padding: 25px;
   margin-top: 0;
+
+  display: flex;
+  
 }
 
 .tabela-section h3 {
@@ -316,12 +319,25 @@ body {
   margin-bottom: 15px;
 }
 
+
 .tabela-container {
   border: 1px dashed var(--border-color);
   border-radius: 6px;
   padding: 15px;
   overflow-x: auto;
+  width: 100%;
+  margin-right: 5rem;
 }
+
+.tabela-container2{
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  padding: 15px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+
 
 table {
   width: 100%;
@@ -343,6 +359,7 @@ th {
 td {
   height: 30px;
   border-right: 1px solid #172541;
+  
 }
 
 tbody tr:nth-child(odd) {
