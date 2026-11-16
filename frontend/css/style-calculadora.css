@@ -347,10 +347,12 @@ td {
 
 tbody tr:nth-child(odd) {
   background-color: #344A77;
+  text-align: center;
 }
 
 tbody tr:nth-child(even) {
   background-color: #263A63;
+  text-align: center;
 }
 
 /* FOOTER */
