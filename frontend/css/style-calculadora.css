@@ -326,7 +326,7 @@ body {
   padding: 15px;
   overflow-x: auto;
   width: 100%;
-  margin-right: 5rem;
+
 }
 
 .tabela-container2{
@@ -335,8 +335,8 @@ body {
   padding: 15px;
   overflow-x: auto;
   width: 100%;
+  margin-left: 5rem;
 }
-
 
 
 table {

@@ -1,9 +1,8 @@
 let montante = 0;
 
-let capitalInicial = document.getElementById("capitalInicial").value;
-let taxaBruta = document.getElementById("taxa").value;
-let tempo = document.getElementById("tempo").value;
-let mensalidade = document.getElementById("mensalidade").value;
+let qtdTabelas = 1;
+
+
 
 const btnCalcular = document.querySelector("#calcular");
 const btnComparar = document.querySelector("#comparar");
@@ -12,6 +11,11 @@ btnCalcular.addEventListener("click", function () {
   const tabela = document.getElementById("tabela");
 
   tabela.innerHTML = "";
+
+  const capitalInicial = document.getElementById("capitalInicial").value;
+const taxaBruta = document.getElementById("taxa").value;
+const tempo = document.getElementById("tempo").value;
+const mensalidade = document.getElementById("mensalidade").value;
 
   const taxa = taxaBruta / 100;
   const taxaMensal = (1 + taxa) ** (1 / 12) - 1;
@@ -61,13 +65,21 @@ btnCalcular.addEventListener("click", function () {
 btnComparar.addEventListener("click", function () {
   if (montante === 0) {
     alert("Calcule um investimento antes de comparar");
-  } else {
+  } else if (qtdTabelas === 2){
+    alert("Você atingiu o limite de tabelas");
+  } 
+  else {
+    const capitalInicial = document.getElementById("capitalInicial").value;
+const taxaBruta = document.getElementById("taxa").value;
+const tempo = document.getElementById("tempo").value;
+const mensalidade = document.getElementById("mensalidade").value;
+    qtdTabelas++;
     const sectionTabelas = document.getElementById("tabela-section");
     const div = document.createElement("div");
     div.className = "tabela-container2";
 
     const titulo = document.createElement("h3");
-    titulo.textContent = "Investimento 2";
+    titulo.textContent = "Investimeto 2";
     div.appendChild(titulo);
 
     const table = document.createElement("table");
