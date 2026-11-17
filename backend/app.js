@@ -1,0 +1,16 @@
+require("dotenv").config({ path: require("path").resolve(__dirname, ".env") });
+const express = require("express");
+const cors = require("cors");
+const iaRoutes = require("./routes/ia-router");
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/api/ia", iaRoutes);
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
