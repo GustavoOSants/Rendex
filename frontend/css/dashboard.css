@@ -38,7 +38,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
   background-color: var(--fundo);
   color: var(--texto);
   line-height: 1.6;
@@ -101,25 +101,6 @@ body {
   color: #04130d;
 }
 
-@media (max-width: 1024px) {
-  .nav-links a {
-    padding: 7px 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --gutter: 16px;
-  }
-
-  .header {
-    height: 52px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-}
 
 /* CONTEÚDO PRINCIPAL */
 
@@ -350,61 +331,31 @@ button:disabled {
 }
 
 /* RESPONSIVIDADE */
-
-@media (max-width: 900px) {
-  .dashboard-container {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .nav-links a {
+    padding: 7px 10px;
   }
+}
 
+@media (max-width: 768px) {
   main {
     width: 92%;
     margin: 30px auto;
   }
-}
 
-@media (max-width: 480px) {
-  .introducao h2 {
-    font-size: 24px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  .indicadores {
+  .dashboard-container {
     grid-template-columns: 1fr;
   }
 
-  .indicadores div {
-    padding: 16px;
+  :root {
+    --gutter: 16px;
   }
 
-  header h1 {
-    font-size: 24px;
+  .header {
+    height: 52px;
   }
-}
 
-.indicadores strong.valor-negativo {
-  color: #FF6A4D;
-}
-
-.indicadores strong.reserva-vermelha {
-  color: #FF6A4D;
-}
-
-.indicadores strong.reserva-amarela {
-  color: #F5B942;
-}
-
-.indicadores strong.reserva-verde {
-  color: #1FD18B;
-}
-
-.indicadores strong.reserva-indefinida {
-  color: #7FA6FF;
-}
-
-/* Despesas em vermelho */
-#resultado-despesas {
-  color: #FF6A4D;
+  .nav-links {
+    display: none;
+  }
 }
