@@ -12,21 +12,23 @@
       content="Dívidas, educação financeira, renda extra, renda ativa, renda passiva, investimentos, finanças"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://gstatic.com" crossorigin />
-    <link href="https://googleapis.com" rel="stylesheet" />
-
     <title>Seção: Como sair das dívidas?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
-      <div>
-        <h1><a href="/"> Rendex </a></h1>
-        <nav aria-label="Navegação dos Ícones">
-          <ul>
+      <nav class="navbar">
+        <h1><a href="/" class="logo"> Rende<span>x</span> </a></h1>
+        <span class="material-symbols-outlined barras" > menu </span>
+          <ul id="menu">
             <li><a href="#inicio" target="_blank"> Início </a></li>
             <li><a href="#raioxfinanceiro" target="_blank"> Raio-X Financeiro </a></li>
             <li><a href="#trilhadeaprendizado" target="_blank"> Trilha de aprendizado </a></li>
@@ -35,14 +37,13 @@
             <li><a href="#sairdasdividas" target="_blank"> Sair das dívidas </a></li>
           </ul>
         </nav>
-      </div>
     </header>
 
     <main>
       <section class="first-section" aria-labelledby="primeira-sessao">
         <div class="first-container">
-          <h2> Como sair das <span>dívidas?</span></h2>
-          <h2> Educação Financeira: O recurso para compreender a realidade das dívidas </h2>
+          <h2 id="first-title"> Como sair das <span>dívidas?</span></h2>
+          <h2 id="-title"> Educação Financeira: O recurso para compreender a realidade das dívidas </h2>
           <p>
             Ter dívidas para pagar tira a tranquilidade de qualquer pessoa. Não
             conseguir arcar com os compromissos financeiros pode gerar angústia,
@@ -55,9 +56,6 @@
             Isso não é absolutamente verdade.
           </p>
         </div>
-      </section>
-
-      <article>
         <div class="card-text">
           <p>
             Muitos consumidores que extrapolam os limites do cheque especial e
@@ -67,12 +65,12 @@
             como a Serasa e o SPC.
           </p>
         </div>
-      </article>
+      </section> 
 
       <section class="second-section" aria-labelledby="segunda-sessao">
         <div class="second-container">
           <h3> Como está sendo a relação de finanças e investimentos com a geração Z?</h3>
-          <p> A geração Z percebeu Percebeu que encarar as dívidas doem menos do que fingir que o problema não existe. Pequenas atitudes, quando somadas, transformam o cenário de uma geração inteira. Ferramentas digitais , campanhas de renegociação e conteúdos de educação financeira estão tornando essa jornada mais simples e menos intimidadora para quem está começando a cuidar das próprias contas.</p>
+          <p> A geração Z percebeu Percebeu que encarar as dívidas doem menos do que fingir que o problema não existe. Pequenas atitudes, quando somadas, transformam o cenário de uma geração inteira. Ferramentas digitais, campanhas de renegociação e conteúdos de educação financeira estão tornando essa jornada mais simples e menos intimidadora para quem está começando a cuidar das próprias contas.</p>
         </div>
       </section>
 
@@ -87,13 +85,15 @@
               <li> Conquistando o primeiro salário;</li>
               <li> E iniciando a batalha para alcançar a tão sonhada independência financeira.</li>
             </ul> 
-            <div class="first-toggle-list">
+        </div>
+      </section>
+      
+      <div class="first-toggle-list">
             <details>
               <summary> E quais são os fatores que estão beneficiando os jovens nesse cenário </summary>
               <p> A facilidade de acesso, consulta e renegociação dentro das plataformas digitais, acessibilidade que bancos e fintechs criaram, com soluções mais intuitivas, linguagem acessível e ferramentas que ajudam o consumidor a entender o impacto dos juros e a escolher o melhor plano de pagamento, e a mudança de hábitos que é um ponto crucial. Essa é a geração mais consciente sobre os impactos sociais e emocionais que os problemas financeiros podem causar, e está mais atenta a diálogos que envolvem temas como saúde mental e fobia financeira. </p>
             </details>
-        </div>
-      </section>
+      </div>
 
       <section class="fourth-session">
         <div class="fourth-container">
@@ -243,5 +243,7 @@
 
     <p> &copy; 2026 Todos os direitos reservados </p>
     </footer>
+
+    <script src="menu.js"> </script>
   </body>
 </html>

@@ -1,3 +1,162 @@
 :root {
-  --font-primaria: "Nunito", sans-serif;
+  --font-family: "Nunito", sans-serif;
+
+  --cor-fundo: #0d1526;
+
+  --color-text: #e9eefc;
+
+  --cor-destaque-primario: #1fd18b;
+  --cor-destaque-secundario: #ff6a4c;
+  --cor-destaque-terciario: #8b9ac0;
+
+  --color-cards-links: #26365a;
+  --color-aside: #fcda00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: var(--color-text);
+
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+header {
+  min-height: 8dvh;
+  height: 8dvh;
+  width: 100%;
+  border-bottom: 1px solid var(--cor-destaque-terciario);
+  display: flex;
+  padding: 0.313rem;
+}
+
+.barras {
+  color: var(--cor-destaque-primario);
+  cursor: pointer;
+  margin-right: 16px;
+  font-size: 1.8rem;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 a {
+  margin-left: 1rem;
+}
+
+h1,
+h1 span {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--cor-destaque-secundario);
+}
+
+#menu {
+  display: none;
+  list-style: none;
+}
+
+#menu a {
+  color: var(--color-cards-links);
+}
+
+h1 > a,
+h2 span,
+h2 {
+  color: var(--color-text);
+  text-align: center;
+}
+
+main {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+  padding: 2rem;
+  line-height: 2;
+}
+
+h2 span {
+  color: var(--cor-destaque-primario);
+  margin-top: 0.5rem;
+}
+
+h3 {
+  color: var(--color-title);
+}
+
+#first-title {
+  font-size: 40px;
+}
+
+#second-title {
+  font-size: 26px;
+  margin: 24px 24px;
+}
+
+.card-text,
+article div {
+  position: relative;
+  background-color: var(--color-cards-links);
+  border: 2px solid var(--cor-destaque-terciario);
+  border-radius: 30px;
+  object-fit: cover;
+  padding: 2rem;
+}
+
+.card-text p::before {
+  content: "";
+  position: absolute;
+  left: 1em;
+  top: 1rem;
+  bottom: 1rem;
+  width: 5px;
+  background-color: var(--cor-destaque-secundario);
+  border-radius: 999px;
+}
+
+article p {
+  position: relative;
+  padding: 20px;
+}
+
+article p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  background-color: var(--cor-destaque-primario);
+  border-radius: 999px;
+}
+
+@media screen and (min-width: 48rem) {
+  #menu {
+    display: block;
+  }
+
+  .barras {
+    display: none;
+  }
 }
