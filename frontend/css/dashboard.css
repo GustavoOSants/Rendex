@@ -359,3 +359,49 @@ button:disabled {
     display: none;
   }
 }
+
+/* Notificações do dashboard */
+.notificacao {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  max-width: 360px;
+  padding: 16px 22px;
+  border-radius: 12px;
+  background-color: #131d33;
+  color: #ffffff;
+  border-left: 4px solid #1fd18b;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notificacao[hidden] {
+  display: none;
+}
+
+.notificacao.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notificacao.erro {
+  border-left-color: #ff6a4d;
+}
+
+.notificacao.sucesso {
+  border-left-color: #1fd18b;
+}
+
+@media (max-width: 480px) {
+  .notificacao {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+}
