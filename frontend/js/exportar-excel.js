@@ -1,10 +1,11 @@
 // aos fuchiqueiros, principalmente gui
-//observem o trabalho de uma diva king
-//bibi rainha dos codigos
+// observem o trabalho de uma diva king
+// bibi rainha dos codigos
+
 document.getElementById("btn-exportar-excel").addEventListener("click", async () => {
   try {
     if (typeof ExcelJS === "undefined") {
-      alert("A biblioteca ExcelJS não foi carregada.");
+      mostrarNotificacao("A biblioteca ExcelJS não foi carregada.", "erro");
       return;
     }
 
@@ -19,7 +20,7 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
       const valor = Number(campo.value || 0);
 
       if (!Number.isFinite(valor) || valor < 0) {
-        alert("Confira os valores financeiros preenchidos.");
+        mostrarNotificacao("Confira os valores financeiros preenchidos.", "erro");
         return;
       }
 
@@ -40,10 +41,14 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
     }
 
     const saldo = totalRendas - totalGastos;
+
     const comprometimento = totalRendas > 0
-      ? totalGastos / totalRendas : 0;
+      ? totalGastos / totalRendas
+      : 0;
+
     const disponivel = totalRendas > 0
-      ? saldo / totalRendas : 0;
+      ? saldo / totalRendas
+      : 0;
 
     const workbook = new ExcelJS.Workbook();
     workbook.creator = "Rendex";
@@ -60,30 +65,33 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
       claro: "E9EEFC"
     };
 
-    const moeda = '"R$" #,##0.00;[Red]("R$" #,##0.00)';
+    const moeda = '"R$" #,##0.00;[Red]\\("R$" #,##0.00)';
 
     function criarTitulo(aba, titulo, ultimaColuna) {
       aba.mergeCells(`A1:${ultimaColuna}2`);
 
       const celula = aba.getCell("A1");
+
       celula.value = titulo;
       celula.fill = {
         type: "pattern",
         pattern: "solid",
         fgColor: { argb: "FF" + cores.fundo }
       };
+
       celula.font = {
         name: "Aptos",
         size: 17,
         bold: true,
         color: { argb: "FF" + cores.verde }
       };
+
       celula.alignment = {
         vertical: "middle",
         horizontal: "center"
       };
 
-      //gui fuchiqueiro, saia daq
+      // gui fuchiqueiro, saia daq
       aba.getRow(1).height = 24;
       aba.getRow(2).height = 20;
     }
@@ -97,11 +105,15 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
           pattern: "solid",
           fgColor: { argb: "FF" + cores.azul }
         };
+
         celula.font = {
           bold: true,
           color: { argb: "FF" + cores.branco }
         };
-        celula.alignment = { vertical: "middle" };
+
+        celula.alignment = {
+          vertical: "middle"
+        };
       });
     }
 
@@ -112,6 +124,7 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
           pattern: "solid",
           fgColor: { argb: "FF" + cor }
         };
+
         celula.font = {
           bold: true,
           color: { argb: "FF" + cores.fundo }
@@ -143,10 +156,13 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
     criarCabecalho(resumo.getRow(9));
 
     resumo.getRow(10).values = [
-      "Comprometimento da renda", comprometimento
+      "Comprometimento da renda",
+      comprometimento
     ];
+
     resumo.getRow(11).values = [
-      "Percentual disponível", disponivel
+      "Percentual disponível",
+      disponivel
     ];
 
     resumo.getCell("B10").numFmt = "0.00%";
@@ -161,8 +177,11 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
     criarTitulo(detalhes, "RENDEX | DETALHAMENTO", "C");
 
     detalhes.getRow(4).values = [
-      "Tipo", "Categoria", "Valor (R$)"
+      "Tipo",
+      "Categoria",
+      "Valor (R$)"
     ];
+
     criarCabecalho(detalhes.getRow(4));
 
     registros.forEach((registro, indice) => {
@@ -197,7 +216,7 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
       { state: "frozen", ySplit: 4 }
     ];
 
-    // GERAR E BAIXAR O ARQUIVO  dont modifiquie plsss
+    // GERAR E BAIXAR O ARQUIVO - dont modifiquie plsss
     const buffer = await workbook.xlsx.writeBuffer();
 
     const blob = new Blob([buffer], {
@@ -218,8 +237,18 @@ document.getElementById("btn-exportar-excel").addEventListener("click", async ()
 
     setTimeout(() => URL.revokeObjectURL(url), 1000);
 
+    // Notifics
+    mostrarNotificacao(
+      "Relatório financeiro gerado! O download foi iniciado.",
+      "sucesso"
+    );
+
   } catch (erro) {
     console.error("Erro ao exportar Excel:", erro);
-    alert("Não foi possível gerar o relatório financeiro.");
+
+    mostrarNotificacao(
+      "Não foi possível gerar o relatório financeiro.",
+      "erro"
+    );
   }
 });
