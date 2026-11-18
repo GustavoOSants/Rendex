@@ -177,7 +177,7 @@ h3 {
 }
 
 .card-text,
-article div {
+article {
   position: relative;
   background-color: var(--border-card);
   border: 2px solid var(--text-muted);
@@ -190,8 +190,8 @@ article div {
   content: "";
   position: absolute;
   left: 1em;
-  top: 1rem;
-  bottom: 1rem;
+  top: 2rem;
+  bottom: 2rem;
   width: 5px;
   background-color: var(--header-laranja);
   border-radius: 999px;
@@ -213,6 +213,24 @@ article p::before {
   border-radius: 999px;
 }
 
+.card-steps{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
+}
+
+.card-steps li, .card-steps article {
+  padding: auto;
+  height: 100%;
+  align-content: center;
+}
+
+
+
 @media screen and (min-width: 48rem) {
   #menu {
     display: block;
@@ -221,4 +239,26 @@ article p::before {
   .barras {
     display: none;
   }
+
+  .card-text{
+  width: 70%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+   }
+
+  .card-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-steps li:last-child {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+
+
+
+  
 }
