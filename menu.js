@@ -1,7 +1,11 @@
-const botaoMenu = document.querySelector(".barras")
-const listaMenu = document.getElementById("menu")
+const menuBarras = document.getElementById("menu-barras")
+const listaMenu = document.getElementsByClassName("nav-links")
 
-botaoMenu.addEventListener("click", function(){
-    console.log("Clicou no botão");
-    
+const breakpoint = window.matchMedia("(min-width: 48rem)");
+
+menuBarras.addEventListener("click", function() {
+    listaMenu.classList.toggle("aberto");
+
+    const menuAberto = listaMenu.classList.contains("ativo");
+    menuBarras.setAttribute()
 })
