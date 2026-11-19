@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-fundo: #0d1526;
+  --cor-sucesso: #1fd18b;
+  --cor-falha: #ff6a4d;
+  --cor-titulo: #e9eefc;
+  --cor-subtexto: #8b9ac0;
+  --fonte-principal: "Nunito", sans-serif;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-subtexto);
+  font-family: var(--fonte-principal);
+}
