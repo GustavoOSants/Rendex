@@ -10,23 +10,30 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/pagina-noticia.css" />
 </head>
 
 <body>
   <!-- Barra de Navegação Superior -->
-  <header class="navbar">
-    <div class="navbar-container">
-      <a href="#" class="logo">Rende<span>x</span></a>
-      <nav class="nav-links">
-        <a href="#">Início</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Trilha de Aprendizado</a>
-        <a href="#">Calculadora</a>
-        <a href="#" class="active">Radar de Notícias</a>
-        <a href="#">Sair das Dívidas</a>
-      </nav>
-    </div>
+  <header class="header">
+    <h1 class="logo">Rende<span>x</span></h1>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="/frontend/pages/dashboard.html">Dashboard</a></li>
+        <li><a href="#">Trilha de Aprendizado</a></li>
+        <li><a href="/frontend/pages/calculadora.html">Calculadora</a></li>
+        <li><a href="/frontend/pages/pagina-de-noticia.html" class="active">Radar de Notícias</a></li>
+        <li><a href="/frontend/pages/como-sair-das-dividas.html">Sair das Dívidas</a></li>
+        <li><a href="/frontend/pages/cadastro.html"><svg width="24" height="24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.5 7.5c0 3.035 2.465 5.5 5.5 5.5s5.5-2.465 5.5-5.5S15.035 2 12 2a5.503 5.503 0 0 0-5.5 5.5Zm1.5 0c0-2.205 1.795-4 4-4s4 1.795 4 4-1.795 4-4 4-4-1.795-4-4Zm10.57 10.91 1.015 3.785 1.45-.39-1.015-3.785a4.762 4.762 0 0 0-4.59-3.52H8.57a4.752 4.752 0 0 0-4.59 3.52l-1.015 3.785 1.45.39L5.43 18.41A3.253 3.253 0 0 1 8.57 16h6.86c1.47 0 2.76.99 3.14 2.41Z"
+                fill="currentColor" />
+            </svg></a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Conteúdo Principal -->
@@ -37,164 +44,15 @@
         O que tá rolando no mercado financeiro e na economia real. Clique pra
         ler a matéria original.
       </p>
+      
     </section>
 
     <!-- Grade de Cards de Notícias -->
     <section class="news-grid" id="news-container">
       <!-- Card 1 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>
-            Dólar fecha em alta com exterior e política econômica no radar em
-            dia de dados de emprego nos EUA
-          </h2>
-          <p>
-            O dólar encerrou a sexta-feira em alta contra o real, acompanhando
-            o fortalecimento da[...]
-          </p>
+      <div class="news-list">
+        <span class="news-status"></span>
         </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Inflação</span>
-          <h2>
-            IPCA de setembro registra alta de 0,82% e atinge 4,58% em 12 meses
-          </h2>
-          <p>
-            Índice de inflação oficial acelera em relação a agosto,
-            mantendo-se dentro do intervalo da meta.
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>
-            Análise de mercado: Bradesco prevê ciclo contínuo de cortes da
-            Selic
-          </h2>
-          <p>
-            Relatório projeta trajetória descendente da taxa básica de juros
-            pros próximos trimestres.
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>Ibovespa avança com alta em mercados externos</h2>
-          <p>
-            O Ibovespa fechou em alta nesta sexta-feira, em sessão embalada
-            por uma bateria de resultados[...]
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 5 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>
-            Brasil tem superávit comercial de US$9,3 bi em outubro com recorde
-            de exportações
-          </h2>
-          <p>
-            A balança comercial brasileira registrou superávit de US$9,318
-            bilhões em outubro[...]
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 6 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>Copom reduz a Taxa Selic para 13,75% ao ano</h2>
-          <p>
-            Decisão unânime do Comitê de Política Monetária reduz juros
-            básicos em 0,25 ponto percentual.
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 7 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>
-            Dólar fecha em alta com exterior e política econômica no radar em
-            dia de dados de emprego nos EUA
-          </h2>
-          <p>
-            O dólar encerrou a sexta-feira em alta contra o real, acompanhando
-            o fortalecimento da[...]
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 8 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Inflação</span>
-          <h2>
-            IPCA de setembro registra alta de 0,82% e atinge 4,58% em 12 meses
-          </h2>
-          <p>
-            Índice de inflação oficial acelera em relação a agosto,
-            mantendo-se dentro do intervalo da meta.
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-
-      <!-- Card 9 -->
-      <article class="news-card">
-        <div class="card-top">
-          <span class="tag">Juros</span>
-          <h2>
-            Análise de mercado: Bradesco prevê ciclo contínuo de cortes da
-            Selic
-          </h2>
-          <p>
-            Relatório projeta trajetória descendente da taxa básica de juros
-            pros próximos trimestres.
-          </p>
-        </div>
-        <a href="#" class="read-more" target="_blank" rel="noopener noreferrer">
-          Ler no portal original <span class="arrow-icon">↗</span>
-        </a>
-      </article>
-    </section>
   </main>
 
   <hr class="divider" />
