@@ -121,6 +121,21 @@ body {
     display: none;
   }
 
+   .nav-links.aberto a {
+    display: block;
+    width: 100%;
+    
+  }
+
+  .nav-links a.aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    right: 0;
+}
+
   main {
     margin-top: 4rem;
   }
@@ -202,14 +217,7 @@ h1 span {
   color: var(--accent-green);
 }
 
-.nav-links a.aberto {
-  display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 52px;
-    left: 0;
-    right: 0;
-}
+
 
 h1 > a,
 h2 span,
@@ -232,6 +240,10 @@ main {
 h2 span {
   color: var(--accent-green);
   margin-top: 0.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -274,6 +286,14 @@ h3 {
 
 .fifth-container {
   margin-top: 2rem;
+}
+
+.second-toggle-list + p {
+  margin-top: 2rem;
+}
+
+svg {
+  color: var(--accent-green);
 }
 
 details summary {
@@ -388,6 +408,10 @@ footer {
   border-top: 2px solid var(--header-borda);
 }
 
+#quadro p {
+  font-weight: 100;
+}
+
 footer nav ul {
   list-style: none;
   display: flex;
@@ -450,7 +474,7 @@ footer p {
   #quadro {
     width: 100%;
     margin: auto;
-    padding: 4rem;
+    padding: 2rem;
   }
 
   .ideias {
@@ -476,7 +500,7 @@ footer p {
   padding: 2rem;
   background-color: var(--border-card);
   border-radius: 0.5rem;
-  }
+}
   
 .button-link {
   display: flex;
