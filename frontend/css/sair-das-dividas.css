@@ -125,7 +125,7 @@ body {
     margin-top: 4rem;
   }
 
-  details #seta-abrir{
+  details .toggle-icon {
     position: absolute;
     top: 1.2rem;
     left: 2rem;
@@ -160,7 +160,8 @@ body {
   }
 
   .button-link {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   height: 80%;
@@ -381,8 +382,6 @@ article p::before {
   border-left: 10px solid #fcda00;
 }
 
-
-
 footer {
   width: 100%;
   padding: 1rem;
@@ -415,6 +414,7 @@ footer p {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 48rem) {
