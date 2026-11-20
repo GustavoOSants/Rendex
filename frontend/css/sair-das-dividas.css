@@ -121,50 +121,67 @@ body {
     display: none;
   }
 
+  main {
+    margin-top: 4rem;
+  }
+
   details #seta-abrir{
     position: absolute;
     top: 1.2rem;
     left: 2rem;
   }
 
+  #quadro {
+    width: 100%;
+    height: 100%;
+    margin-top: 2rem;
+  }
+
   .ideias {
   border: 4px solid var(--header-laranja);
   border-radius: 1rem;
-}
-
-  #quadro .ideias {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.25rem; 
-  width: 100%;
-  height: 100%;
-  }
-
-  #quadro div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-    padding: 0.125rem;
-   width: 100%;
-  height: 100%;
-  }
+  gap: 1rem;
+  padding: 1rem; 
+}
 
   #quadro p {
   width: 100%;
   height: 100%;
-  padding: 1rem;
-    
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   line-height: 1.4;
   background-color: var(--border-card);
   border-radius: 0.5rem;
   }
 
-  #quadro .ideias {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0.125rem;
-  }
+  .button-link {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+}
+
+.button-link a{
+  padding: 0.25rem 2rem;
+  background-color: var(--accent-green);
+  border-radius: 0.5rem;
+  color: var(--bg-page);
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.4;
+  transition: color 300ms;
+}
+
+.button-link a:hover {
+  background-color: var(--header-verde);
+  color: var(--text-primary);
+}
+
 }
 
 h1 a {
@@ -366,6 +383,33 @@ article p::before {
 
 
 
+footer {
+  width: 100%;
+  padding: 2rem;
+  border: 2px solid var(--header-borda);
+}
+
+footer nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+footer nav a {
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer nav a:hover {
+  color: var(--text-primary);
+}
+
 @media screen and (min-width: 48rem) {
   #menu-barras {
     display: none;
@@ -397,8 +441,9 @@ article p::before {
   }
 
   #quadro {
-    width: 80%;
+    width: 100%;
     margin: auto;
+    padding: 4rem;
   }
 
   .ideias {
@@ -408,16 +453,16 @@ article p::before {
 
   #quadro .ideias {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.25rem;    
   padding: 1.5rem;
 }
 
   #quadro p {
   height: 100%;
+  object-fit: cover;
   display: flex;
   align-items: center;
-  gap: 1rem;
   text-align: center;   
   line-height: 1.4;
   justify-content: center;
@@ -425,10 +470,24 @@ article p::before {
   background-color: var(--border-card);
   border-radius: 0.5rem;
   }
+  
+.button-link {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+}
 
-  #quadro p:last-child {
-    width: 100%;
-    grid-column: 1 / -1;
-  }
+.button-link a{
+  padding: 0.5rem 3rem;
+  background-color: var(--accent-green);
+  border-radius: 0.5rem;
+  color: var(--bg-page);
+  font-weight: 800;
+  transition: color 300ms;
+}
 
+.button-link a:hover {
+  background-color: var(--header-verde);
+  color: var(--text-primary);
+}
 }
