@@ -89,6 +89,10 @@ btnCalcular.addEventListener("click", function () {
         },
       ],
     },
+    options: {
+      responsive: true,
+    maintainAspectRatio: false,
+    }
   });
 });
 
@@ -239,6 +243,10 @@ btnComparar.addEventListener("click", function () {
       },
     ]
   },
+  options: {
+      responsive: true,
+    maintainAspectRatio: false,
+    }
 });;
   }
 });
