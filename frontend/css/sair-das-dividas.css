@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
 
 :root {
@@ -13,7 +14,6 @@
   --border-aside: #fcda00;
   --color-aside: #fcda0025;
 
-  /* Cabeçalho (igual ao index) */
   --header-bg: rgba(13, 21, 38, 0.92);
   --header-borda: #1f2b4a;
   --header-texto: #f1f5f9;
@@ -32,11 +32,7 @@
 }
 
 body {
-  font-family:
-    "Nunito",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-page);
   color: var(--text-primary);
   min-height: 100vh;
@@ -52,11 +48,9 @@ body {
   z-index: 10;
   height: 60px;
   padding-inline: max(var(--gutter), (100% - var(--container)) / 2);
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   line-height: 1.5;
   background-color: var(--header-bg);
   backdrop-filter: blur(8px);
@@ -71,6 +65,10 @@ body {
 
 .logo span {
   color: var(--header-laranja);
+}
+
+.header nav {
+  position: relative;
 }
 
 .nav-links {
@@ -88,18 +86,24 @@ body {
   color: var(--header-muted);
   font-size: 13px;
   font-weight: 700;
-  transition:
-    color 0.2s,
-    background 0.2s;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a.active {
+  background-color: var(--header-verde);
+  color: #04130d;
 }
 
 .nav-links a:hover {
   color: var(--header-texto);
 }
 
-.nav-links a.active {
-  background-color: var(--header-verde);
-  color: #04130d;
+#menu-barras {
+  display: none;
+  cursor: pointer;
+  color: var(--accent-green);
+  font-size: 28px;
+  user-select: none;
 }
 
 @media (max-width: 1024px) {
@@ -117,33 +121,46 @@ body {
     height: 52px;
   }
 
-  .nav-links a {
-    display: none;
+  #menu-barras {
+    display: block;
   }
 
-   .nav-links.aberto a {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 220px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    background-color: var(--bg-navbar);
+    border: 1px solid var(--header-borda);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+  }
+
+  .nav-links.aberto {
+    display: flex;
+  }
+
+  .nav-links a {
     display: block;
     width: 100%;
-    
+    padding: 10px;
   }
-
-  .nav-links a.aberto {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 52px;
-    left: 0;
-    right: 0;
-}
 
   main {
     margin-top: 4rem;
   }
 
-  details .toggle-icon {
-    position: absolute;
-    top: 1.2rem;
-    left: 2rem;
+  details summary .toggle-icon {
+    position: static;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
   }
 
   #quadro {
@@ -153,52 +170,53 @@ body {
   }
 
   .ideias {
-  border: 4px solid var(--header-laranja);
-  border-radius: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1rem; 
-}
+    border: 4px solid var(--header-laranja);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
   #quadro p {
-  width: 100%;
-  height: 100%;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.4;
-  background-color: var(--border-card);
-  border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+    background-color: var(--border-card);
+    border-radius: 0.5rem;
   }
 
   .button-link {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  height: 80%;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+  }
+
+  .button-link a {
+    padding: 0.25rem 2rem;
+    background-color: var(--accent-green);
+    border-radius: 0.5rem;
+    color: var(--bg-page);
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.4;
+    transition: color 300ms;
+  }
+
+  .button-link a:hover {
+    background-color: var(--header-verde);
+    color: var(--text-primary);
+  }
 }
 
-.button-link a{
-  padding: 0.25rem 2rem;
-  background-color: var(--accent-green);
-  border-radius: 0.5rem;
-  color: var(--bg-page);
-  text-align: center;
-  font-weight: 800;
-  line-height: 1.4;
-  transition: color 300ms;
-}
-
-.button-link a:hover {
-  background-color: var(--header-verde);
-  color: var(--text-primary);
-}
-
-}
+/* TÍTULOS */
 
 h1 a {
   margin-left: 1rem;
@@ -211,30 +229,12 @@ h1 span {
   color: var(--cor-destaque-secundario);
 }
 
-#menu-barras {
-  display: flex;
-  cursor: pointer;
-  color: var(--accent-green);
-}
-
-
-
 h1 > a,
 h2 span,
 h2 {
   color: var(--color-text);
   text-align: center;
   font-weight: 800;
-}
-
-main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
-  padding: 2rem;
-  line-height: 2;
 }
 
 h2 span {
@@ -256,7 +256,18 @@ h3 {
 
 #second-title {
   font-size: 26px;
-  margin: 24px 24px;
+}
+
+/* CONTEÚDO */
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  padding: 2rem;
+  line-height: 2;
 }
 
 .first-container {
@@ -292,18 +303,29 @@ h3 {
   margin-top: 2rem;
 }
 
+/* FAQ E SETAS */
+
 svg {
   color: var(--accent-green);
 }
 
 details summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-top: 1rem;
-  margin-left: 4rem;
+  margin-left: 2rem;
   list-style: none;
   font-weight: 800;
+  cursor: pointer;
 }
 
-.first-toggle-list, .second-toggle-list{
+details summary svg {
+  transition: transform 0.2s ease;
+}
+
+.first-toggle-list,
+.second-toggle-list {
   position: relative;
   width: 100%;
 }
@@ -324,7 +346,7 @@ details summary {
   border-radius: 999px;
 }
 
-.second-toggle-list::before{
+.second-toggle-list::before {
   content: "";
   position: absolute;
   top: 0;
@@ -340,6 +362,8 @@ details p {
   align-content: center;
   align-items: center;
 }
+
+/* CARDS */
 
 .card-text,
 article {
@@ -402,14 +426,16 @@ article p::before {
   border-left: 10px solid #fcda00;
 }
 
+#quadro p {
+  font-weight: 100;
+}
+
+/* FOOTER */
+
 footer {
   width: 100%;
   padding: 1rem;
   border-top: 2px solid var(--header-borda);
-}
-
-#quadro p {
-  font-weight: 100;
 }
 
 footer nav ul {
@@ -441,9 +467,16 @@ footer p {
   font-weight: 700;
 }
 
-@media screen and (min-width: 48rem) {
+/* DESKTOP */
+
+@media screen and (min-width: 769px) {
   #menu-barras {
     display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
   }
 
   main {
@@ -478,47 +511,47 @@ footer p {
   }
 
   .ideias {
-  border: 4px solid var(--header-laranja);
-  border-radius: 1rem;
-}
+    border: 4px solid var(--header-laranja);
+    border-radius: 1rem;
+  }
 
   #quadro .ideias {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem 1.25rem;    
-  padding: 1.5rem;
-}
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+    padding: 1.5rem;
+  }
 
   #quadro p {
-  height: 100%;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  text-align: center;   
-  line-height: 1.4;
-  justify-content: center;
-  padding: 2rem;
-  background-color: var(--border-card);
-  border-radius: 0.5rem;
-}
-  
-.button-link {
-  display: flex;
-  justify-content: center;
-  height: 80%;
-}
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.4;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--border-card);
+    border-radius: 0.5rem;
+  }
 
-.button-link a{
-  padding: 0.5rem 3rem;
-  background-color: var(--accent-green);
-  border-radius: 0.5rem;
-  color: var(--bg-page);
-  font-weight: 800;
-  transition: color 300ms;
-}
+  .button-link {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+  }
 
-.button-link a:hover {
-  background-color: var(--header-verde);
-  color: var(--text-primary);
-}
+  .button-link a {
+    padding: 0.5rem 3rem;
+    background-color: var(--accent-green);
+    border-radius: 0.5rem;
+    color: var(--bg-page);
+    font-weight: 800;
+    transition: color 300ms;
+  }
+
+  .button-link a:hover {
+    background-color: var(--header-verde);
+    color: var(--text-primary);
+  }
 }
