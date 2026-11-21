@@ -218,16 +218,20 @@ body {
   background-color: var(--bg-button);
   color: var(--button-text-color);
   border: none;
+  transition: 300ms ease-out;
 }
 
 .btn-calcular:hover {
-  filter: brightness(1.1);
+  background-color: var(--bg-hero);
+  border: var(--bg-button) solid 0.125rem;
+  color: var(--header-texto);
 }
 
 .btn-comparar {
   background-color: transparent;
   color: var(--text-danger-color);
-  border: 1px solid var(--text-danger-color);
+  border: 0.125rem solid var(--text-danger-color);
+  transition: 300ms ease-out;
 }
 
 .btn-comparar:hover {
@@ -298,9 +302,7 @@ body {
   width: 100%;
 }
 
-canvas {
 
-}
 
 /* TABELA */
 
