@@ -40,17 +40,18 @@ function criarGastos() {
       novoGasto.classList.add("gastos-adicional");
       novoGasto.innerHTML = `
       <label for="${idGasto}">${inputValue} (R$)</label>
-      <input class="${inputValue}" type="number" data-gasto-adicional="true" id="${idGasto}" min="0" step="0.01" value="0" />
-      <i
-        class="fa-solid fa-trash btn-excluir-input"
-        data-id="${idGasto}"
-        role="button"
-        tabindex="0"
-        aria-label="Excluir gasto"
-        title="Excluir gasto"
-        style="position: relative; bottom: 3.2rem; left: 27.6rem;"
+      <div class="input-container">
+        <input class="${inputValue}" type="number" data-gasto-adicional="true" id="${idGasto}" min="0" step="0.01" value="0" />
+        <button
+          type="button"
+          class="btn-excluir-input"
+          data-id="${idGasto}"
+          aria-label="Excluir gasto"
+          title="Excluir gasto"
         >
-      </i>
+          <i class="fa-solid fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
     `;
       containerGastos.appendChild(novoGasto);
     } else if (tipoCadastro === "renda") {
@@ -61,17 +62,18 @@ function criarGastos() {
       novaRenda.classList.add("ganho-adicional");
       novaRenda.innerHTML = `
       <label for="${idRenda}">${inputValue} (R$)</label>
-      <input class="${inputValue}" type="number" data-renda-adicional="true" id="${idRenda}" min="0" step="0.01" value="0" />
-      <i
-        class="fa-solid fa-trash btn-excluir-input"
-        data-id="${idRenda}"
-        role="button"
-        tabindex="0"
-        aria-label="Excluir renda"
-        title="Excluir renda"
-        style="position: relative; bottom: 3.2rem; left: 27.6rem;"
+      <div class="input-container">
+        <input class="${inputValue}" type="number" data-renda-adicional="true" id="${idRenda}" min="0" step="0.01" value="0" />
+        <button
+          type="button"
+          class="btn-excluir-input"
+          data-id="${idRenda}"
+          aria-label="Excluir renda"
+          title="Excluir renda"
         >
-      </i>
+          <i class="fa-solid fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
     `;
       containerRenda.appendChild(novaRenda);
     }
