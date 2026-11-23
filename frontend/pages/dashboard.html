@@ -95,31 +95,36 @@
       </section>
     </div>
 
-    <div class="overlay" id="overlay">
-      <div class="card">
-        <div class="cadastro-gastos">
-          <h3 for="novo-gasto">Novo gasto / Renda (R$)</h3>
-          <div class="tipo-cadastro">
-            <span>Tipo de categoria</span>
+    <dialog class="card" id="card-gastos" aria-labelledby="Cadastro de gastos e rendas">
+      <div class=" cadastro-gastos">
+        <button type="button" class="modal-fechar" id="btn-fechar" aria-label="Fechar modal">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m20.28 4.78-1.06-1.06L12 10.94 4.78 3.72 3.72 4.78 10.94 12l-7.22 7.22 1.06 1.06L12 13.06l7.22 7.22 1.06-1.06L13.06 12l7.22-7.22Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <h3 id="titulo-gastos">Novo gasto / Renda (R$)</h3>
+        <div class="tipo-cadastro">
+          <span class="span-tipo">Tipo de categoria</span>
 
-            <label class="opcao-checkbox-gasto">
-              <input type="radio" name="tipo-cadastro" id="radio-gasto" value="gasto" checked />
-              <span>Gasto</span>
-              <p id="descricao-gasto" style="display: none"></p>
-            </label>
-            <label class="opcao-checkbox-renda">
-              <input type="radio" name="tipo-cadastro" id="radio-renda" value="renda" />
-              <span>Renda</span>
-              <p id="descricao-renda" style="display: none"></p>
-            </label>
-          </div>
-
-          <label for="">Nome da categoria</label>
-          <input type="text" id="nova-info" placeholder="Ex: Alimentação" />
-          <button type="button" class="btn-primario" id="btn-salvar">Salvar</button>
+          <label class="opcao-checkbox-gasto">
+            <input type="radio" name="tipo-cadastro" id="radio-gasto" value="gasto" checked />
+            <span>Gasto</span>
+            <p id="descricao-gasto" style="display: none"></p>
+          </label>
+          <label class="opcao-checkbox-renda">
+            <input type="radio" name="tipo-cadastro" id="radio-renda" value="renda" />
+            <span>Renda</span>
+            <p id="descricao-renda" style="display: none"></p>
+          </label>
         </div>
+
+        <label for="">Nome da categoria</label>
+        <input type="text" id="nova-info" placeholder="Ex: Alimentação" />
+        <button type="button" class="btn-primario" id="btn-salvar">Salvar</button>
       </div>
-    </div>
+    </dialog>
   </main>
 
   <div id="notificacao" class="notificacao" role="status" aria-live="polite" aria-atomic="true" hidden></div>
@@ -131,6 +136,22 @@
   <script src="../js/financeiro.js"></script>
   <script src="../js/result-IA.js"></script>
   <script src="../js/exportar-excel.js"></script>
+
+  <script>
+    const dialogGastos = document.getElementById('card-gastos');
+    const btnAdicionar = document.getElementById('btn-add');
+    const btnFecharDialog = document.getElementById('btn-fechar');
+
+    btnAdicionar.addEventListener('click', () => {
+      if (!dialogGastos.open) dialogGastos.showModal();
+    });
+
+    btnFecharDialog.addEventListener('click', () => dialogGastos.close());
+
+    dialogGastos.addEventListener('click', (event) => {
+      if (event.target === dialogGastos) dialogGastos.close();
+    });
+  </script>
 </body>
 
 </html>
