@@ -141,12 +141,17 @@
     const dialogGastos = document.getElementById('card-gastos');
     const btnAdicionar = document.getElementById('btn-add');
     const btnFecharDialog = document.getElementById('btn-fechar');
+    const btnSalvar = document.getElementById('btn-salvar');
 
     btnAdicionar.addEventListener('click', () => {
       if (!dialogGastos.open) dialogGastos.showModal();
     });
 
     btnFecharDialog.addEventListener('click', () => dialogGastos.close());
+
+    btnSalvar.addEventListener('click', () => {
+      dialogGastos.close();
+    });
 
     dialogGastos.addEventListener('click', (event) => {
       if (event.target === dialogGastos) dialogGastos.close();
