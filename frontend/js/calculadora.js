@@ -27,7 +27,7 @@ btnCalcular.addEventListener("click", function () {
     mensalidade * (((1 + taxaMensal) ** tempoMes - 1) / taxaMensal);
   const total = document.getElementById("montante");
 
-  total.textContent = montante.toFixed(2);
+  total.textContent = `R$ ${montante.toFixed(2)}`;
 
   let montanteMes = capitalInicial;
 
