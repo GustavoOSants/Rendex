@@ -116,3 +116,69 @@ body {
     display: none;
   }
 }
+
+.user-menu {
+  position: relative;
+  list-style: none;
+
+  & details {
+    position: relative;
+  }
+
+  & summary {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: var(--header-muted);
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s, background 0.2s;
+
+    &:hover {
+      color: var(--header-texto);
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+  }
+}
+
+.user-menu summary.active,
+.user-menu details[open] summary {
+  color: #04130d;
+  background-color: var(--header-verde);
+}
+
+.user-menu-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 150px;
+  padding: 6px;
+  border: 1px solid var(--header-borda);
+  border-radius: 10px;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+
+  & a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 7px;
+    color: var(--header-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--header-texto);
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+  }
+}
+
+.user-menu-options a.active {
+  color: #04130d;
+  background-color: var(--header-verde);
+}
