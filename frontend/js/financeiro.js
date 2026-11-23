@@ -1,18 +1,12 @@
 function criarGastos() {
-  const btnAdd = document.getElementById("btn-add");
   const containerGastos = document.getElementById("gastos");
   const containerRenda = document.querySelector(".ganhos");
   const limitGastos = 5;
-  const overlay = document.getElementById("overlay");
   const btnSalvar = document.getElementById("btn-salvar");
   const radioGasto = document.getElementById("radio-gasto");
   const radioRenda = document.getElementById("radio-renda");
   const descricaoGasto = document.getElementById("descricao-gasto");
   const descricaoRenda = document.getElementById("descricao-renda");
-
-  btnAdd.addEventListener("click", () => {
-    overlay.style.display = "flex";
-  });
 
   btnSalvar.addEventListener("click", () => {
     const inputValue = document.getElementById("nova-info").value;
@@ -87,7 +81,6 @@ function criarGastos() {
       descricaoRenda.style.display = "block";
       descricaoRenda.textContent = "Limite atingido";
     }
-    overlay.style.display = "none";
     input.value = "";
   });
 }
