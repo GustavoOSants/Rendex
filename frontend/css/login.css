@@ -315,6 +315,12 @@ form {
   cursor: pointer;
   font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
   margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #18b878;
+    transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 768px) {
