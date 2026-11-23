@@ -294,6 +294,7 @@ form {
     background-color: var(--campo);
     border: 1px solid var(--borda);
     margin-bottom: 1rem;
+    color: var(--texto)
   }
 }
 
