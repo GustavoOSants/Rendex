@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-bt">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Login</title>
+  <title> Cadastre-se</title>
   <link rel="stylesheet" href="../css/cadastro.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <body>
   <header class="header">
     <h1 class="logo">Rende<span>x</span></h1>
-
     <nav>
+      <span class="material-symbols-outlined" id="menu-barras" role="button" tabindex="0" aria-label="Abrir menu"
+        aria-expanded="false">
+        menu
+      </span>
       <ul class="nav-links">
         <li><a href="/index.html">Início</a></li>
         <li><a href="/frontend/pages/dashboard.html">Dashboard</a></li>
@@ -35,8 +39,8 @@
               </svg>
             </summary>
             <div class="user-menu-options">
-              <a href="/frontend/pages/login.html" class="active">Login</a>
-              <a href="/frontend/pages/cadastro.html">Cadastro</a>
+              <a href="/frontend/pages/login.html">Login</a>
+              <a href="/frontend/pages/cadastro.html" class="active">Cadastro</a>
             </div>
           </details>
         </li>
@@ -73,6 +77,8 @@
 
     <p>© 2026 Todos os direitos reservados</p>
   </footer>
+
+  <script src="/frontend/js/menu.js"></script>
 </body>
 
 </html>
