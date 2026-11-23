@@ -296,6 +296,17 @@ button {
   transition: 0.2s;
 }
 
+.add-gastos {
+  background-color: transparent;
+  color: var(--header-texto);
+  border: 2px solid var(--verde);
+}
+
+.add-gastos:hover {
+  background-color: #18b878;
+  transform: translateY(-2px);
+}
+
 .btn-primario {
   background-color: var(--verde);
   color: var(--verde-escuro);
