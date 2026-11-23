@@ -188,6 +188,14 @@ body {
   margin-bottom: 5px;
 }
 
+.formulario p {
+  color: var(--text-danger-color);
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  transition: 300ms ease-out;
+
+}
+
 .campo {
   display: flex;
   flex-direction: column;
@@ -278,6 +286,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 350px){
+  .capital-aportado{
+    flex-direction: column;
+  }
 }
 
 .capital-aportado p {

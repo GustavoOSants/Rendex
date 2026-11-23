@@ -13,17 +13,34 @@ let compararOn = false;
 
 let total = document.getElementById("montante");
 
+const form = document.getElementById("calculadora");
+const aviso = document.createElement("p");
+
+
+let capitalInicial = ""
+let taxaBruta = ""
+let tempo = ""
+let mensalidade = ""
 
 btnCalcular.addEventListener("click", function () {
+  
+  
   const tabela = document.getElementById("tabela");
+
+  capitalInicial = document.getElementById("capitalInicial").value;
+  taxaBruta = document.getElementById("taxa").value;
+  tempo = document.getElementById("tempo").value;
+  mensalidade = document.getElementById("mensalidade").value;
+
+  if(capitalInicial === "" || taxaBruta === "" || tempo === ""){
+    aviso.textContent = "Adicione valores para que seja possivel calcular";
+    form.appendChild(aviso);
+    
+  } else {
+    aviso.textContent = "";
 
   tabela.innerHTML = "";
   acumulado = [];
-
-  const capitalInicial = document.getElementById("capitalInicial").value;
-  const taxaBruta = document.getElementById("taxa").value;
-  const tempo = document.getElementById("tempo").value;
-  const mensalidade = document.getElementById("mensalidade").value;
 
   const taxa = taxaBruta / 100;
   const taxaMensal = (1 + taxa) ** (1 / 12) - 1;
@@ -76,21 +93,26 @@ btnCalcular.addEventListener("click", function () {
 
   const anos = acumulado.map((_, index) => `Ano ${index + 1}`);
 
-  if (graficoAtual !== null) {
-    graficoAtual.destroy();
-  }
-
+  
   const ctx = document.getElementById("myChart");
-
-
+  
   if (compararOn){
-    graficoAtual = new Chart(ctx, {
-  type: 'bar', // No tipo 'bar', as barras de cada array aparecem lado a lado em cada ano
-  data: {
-    labels: anos, // Eixo X (ex: ["Ano 1", "Ano 2", "Ano 3"])
-    datasets: [
-      {
-        label: 'Investimento 1',
+    if(capitalInicial === capitalInicialComparar && taxaBruta === taxaBrutaComparar && tempo === tempoComparar && mensalidade === mensalidadeComparar){
+      aviso.textContent = "Use dados diferentes para calcular novamente";
+      form.appendChild(aviso);
+    } else {
+      graficoAtual.destroy();
+
+      
+      aviso.textContent = "";
+      
+      graficoAtual = new Chart(ctx, {
+        type: 'bar', // No tipo 'bar', as barras de cada array aparecem lado a lado em cada ano
+        data: {
+          labels: anos, // Eixo X (ex: ["Ano 1", "Ano 2", "Ano 3"])
+          datasets: [
+            {
+              label: 'Investimento 1',
         data: acumulado, // 1º array
         backgroundColor: '#22345D',
         borderWidth: 1
@@ -104,17 +126,21 @@ btnCalcular.addEventListener("click", function () {
     ]
   },
   options: {
-      responsive: true,
+    responsive: true,
     maintainAspectRatio: false,
-    }
+  }
 });
 
-  total.textContent = `R$ ${montante.toFixed(2)}, R$ ${acumuladoComparar[acumuladoComparar.length -1]}`;
+total.textContent = `R$ ${montante.toFixed(2)}, R$ ${acumuladoComparar[acumuladoComparar.length -1]}`;
 
-    
-  } else {
-
-
+}
+} else {
+  
+  if (graficoAtual !== null) {
+    graficoAtual.destroy();
+  }
+  
+  
   graficoAtual = new Chart(ctx, {
     type: "bar",
     data: {
@@ -130,24 +156,40 @@ btnCalcular.addEventListener("click", function () {
     },
     options: {
       responsive: true,
-    maintainAspectRatio: false,
+      maintainAspectRatio: false,
     }
-  });}
+  });}}
 });
 
 
+let capitalInicialComparar = ""
+let taxaBrutaComparar = ""
+let tempoComparar = ""
+let mensalidadeComparar = ""
+
 btnComparar.addEventListener("click", function () {
+  capitalInicialComparar = document.getElementById("capitalInicial").value;
+  taxaBrutaComparar = document.getElementById("taxa").value;
+  tempoComparar = document.getElementById("tempo").value;
+  mensalidadeComparar = document.getElementById("mensalidade").value;
   if (montante === 0) {
-    alert("Calcule um investimento antes de comparar");
-  } else {
+    aviso.textContent = "Calcule o primeiro investimento antes de comparar";
+    form.appendChild(aviso);
+  } 
+  else if(capitalInicial === capitalInicialComparar && taxaBruta === taxaBrutaComparar && tempo === tempoComparar && mensalidade === mensalidadeComparar){
+    aviso.textContent = "Use dados diferentes para comparar";
+    form.appendChild(aviso);
+  }
+    else {
+    aviso.textContent = "";
     graficoAtual.destroy();
     acumuladoComparar = [];
     compararOn = true;
 
-    const capitalInicial = document.getElementById("capitalInicial").value;
-    const taxaBruta = document.getElementById("taxa").value;
-    const tempo = document.getElementById("tempo").value;
-    const mensalidade = document.getElementById("mensalidade").value;
+  
+
+
+
 
     const sectionTabelas = document.getElementById("tabela-section");
 
@@ -196,11 +238,11 @@ btnComparar.addEventListener("click", function () {
 
     div.appendChild(table);
 
-    const taxa = taxaBruta / 100;
+    const taxa = taxaBrutaComparar / 100;
     const taxaMensal = (1 + taxa) ** (1 / 12) - 1;
-    const tempoMes = tempo * 12;
+    const tempoMes = tempoComparar * 12;
 
-    let montanteMes = capitalInicial;
+    let montanteMes = capitalInicialComparar;
 
     const tbody = document.createElement("tbody");
 
@@ -208,10 +250,10 @@ btnComparar.addEventListener("click", function () {
       let jurosMes = montanteMes * taxaMensal;
 
       montanteMes =
-        capitalInicial * (1 + taxaMensal) ** i +
-        mensalidade * (((1 + taxaMensal) ** i - 1) / taxaMensal);
+        capitalInicialComparar * (1 + taxaMensal) ** i +
+        mensalidadeComparar * (((1 + taxaMensal) ** i - 1) / taxaMensal);
 
-      let jurosTotal = montanteMes - capitalInicial - mensalidade * i;
+      let jurosTotal = montanteMes - capitalInicialComparar - mensalidadeComparar * i;
 
       const linha = document.createElement("tr");
 
