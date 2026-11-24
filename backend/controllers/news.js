@@ -1,12 +1,7 @@
-// const http = require("node:http");
-// const fs = require("node:fs");
-// const path = require("node:path");
-// const crypto = require("node:crypto");
-// const { log } = require("node:console");
-const newsDataApi = "pub_f96377fcf3de4fe7b50b0ff3457194c0";
+const newsDataApi = "pub_f96377fcf3de4fe7b50b0ff3457194c0"; // <-- Certifique-se de colocar sua chave real
 
 async function getNews(request, response) {
-  if (!newsDataApi) {
+  if (!newsDataApi || newsDataApi === "SUA_CHAVE_AQUI") {
     console.error("API não foi configurada");
     return response.status(503).json({
       error: "Configure a API no servidor para carregar as notícias",
@@ -19,7 +14,7 @@ async function getNews(request, response) {
       country: "br",
       language: "pt",
       category: "business",
-      q: "Investimentos OR Investimento OR Ações OR Bolsa OR Renda Fixa",
+      q: "economia OR investimentos OR bolsa OR selic OR dolar",
       size: "10",
     });
 
@@ -32,37 +27,24 @@ async function getNews(request, response) {
 
     const result = await newResponse.json();
     if (!newResponse.ok || result.status === "error") {
-      console.error("NewsData retornou erro", {
-        status: newResponse.status,
-        message: result.message || "erro sem mensagem",
-      });
+      console.error("NewsData retornou erro:", newResponse.status, result);
       return response.status(502).json({
         error: "A fonte de notícia não respondeu agora, tente novamente.",
       });
     }
 
-    const investmentWords = [
-      "investimento",
-      "investimentos",
-      "ações",
-      "bolsa",
-      "renda fixa",
-      "renda variável",
-      "fundos",
-      "mercado financeiro",
-      "dividendos",
-      "bitcoin",
-      "cripto",
-    ];
+    const rawResults = Array.isArray(result.results) ? result.results : [];
 
-    const articles = (Array.isArray(result.results) ? result.results : [])
+    const seenTitles = new Set();
+    const articles = rawResults
       .filter((article) => {
-        const text =
-          `${article.title || ""} ${article.description || ""}`.toLowerCase();
-        return investmentWords.some((word) => text.includes(word));
+        if (!article.title || !article.link) return false;
+        const normalizedTitle = article.title.trim().toLowerCase();
+        if (seenTitles.has(normalizedTitle)) return false;
+        seenTitles.add(normalizedTitle);
+        return true;
       })
-      .filter((article) => article.title && article.link)
-      .slice(0, 6)
+      .slice(0, 9)
       .map((article) => ({
         title: String(article.title).slice(0, 180),
         description: String(article.description || "").slice(0, 240),
@@ -70,15 +52,13 @@ async function getNews(request, response) {
         imageUrl:
           typeof article.image_url === "string" ? article.image_url : "",
         source: String(
-          article.source_name || article.source_id || "NewsData.io",
+          article.source_name || article.source_id || "Mercado",
         ),
       }));
 
     return response.status(200).json({ articles });
   } catch (error) {
-    console.error("Falha ao consultar notícias", {
-      message: error.message,
-    });
+    console.error("Falha ao consultar notícias:", error.message);
     return response.status(502).json({
       error: "Não foi possível buscar notícias agora",
     });
