@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
 <body>
@@ -24,14 +25,14 @@
       </span>
       <ul class="nav-links">
         <li><a href="/index.html">Início</a></li>
-        <li><a href="/frontend/pages/dashboard.html">Dashboard</a></li>
+        <li><a href="/frontend/pages/dashboard.html" class="active">Dashboard</a></li>
         <li><a href="#">Trilha de Aprendizado</a></li>
         <li><a href="/frontend/pages/calculadora.html">Calculadora</a></li>
         <li><a href="/frontend/pages/pagina-de-noticia.html">Radar de Notícias</a></li>
         <li><a href="/frontend/pages/como-sair-das-dividas.html">Sair das Dívidas</a></li>
         <li class="user-menu">
           <details>
-            <summary aria-label="Abrir menu de Login e Cadastro" class="active">
+            <summary aria-label="Abrir menu de Login e Cadastro">
               <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M6.5 7.5c0 3.035 2.465 5.5 5.5 5.5s5.5-2.465 5.5-5.5S15.035 2 12 2a5.503 5.503 0 0 0-5.5 5.5Zm1.5 0c0-2.205 1.795-4 4-4s4 1.795 4 4-1.795 4-4 4-4-1.795-4-4Zm10.57 10.91 1.015 3.785 1.45-.39-1.015-3.785a4.762 4.762 0 0 0-4.59-3.52H8.57a4.752 4.752 0 0 0-4.59 3.52l-1.015 3.785 1.45.39L5.43 18.41A3.253 3.253 0 0 1 8.57 16h6.86c1.47 0 2.76.99 3.14 2.41Z"
@@ -135,11 +136,21 @@
 
         <label for="">Nome da categoria</label>
         <input type="text" id="nova-info" placeholder="Ex: Alimentação" />
+        <span class="error-message"></span>
         <button type="button" class="btn-primario" id="btn-salvar">Salvar</button>
       </div>
     </dialog>
   </main>
 
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">Linktree</a>
+      <a href="#">Github</a>
+      <a href="#">Patrocinadores</a>
+    </div>
+
+    <p>© 2026 Todos os direitos reservados</p>
+  </footer>
   <div id="notificacao" class="notificacao" role="status" aria-live="polite" aria-atomic="true" hidden></div>
 
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>

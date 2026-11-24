@@ -25,6 +25,10 @@ function criarGastos() {
       mostrarNotificacao(`Você atingiu o limite de ${limitGastos} rendas adicionais.`, "erro");
       return;
     }
+    if (!inputValue.trim()) {
+      mostrarNotificacao("Digite o nome da categoria.", "erro");
+      return;
+    }
 
     if (tipoCadastro === "gasto") {
       const novoGasto = document.createElement("div");
