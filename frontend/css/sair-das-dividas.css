@@ -158,7 +158,9 @@ body {
   }
 
   main {
+    width: 100%;
     margin-top: 4rem;
+    padding: 2rem;
   }
 
   details summary .toggle-icon {
@@ -266,9 +268,6 @@ h3 {
 /* CONTEÚDO */
 
 main {
-  width: 80%;
-  display: flex;
-  margin: auto;
   flex-direction: column;
   justify-content: center;
   text-align: justify;
@@ -486,6 +485,9 @@ footer p {
 
   main {
     padding: 8rem;
+     width: 80%;
+  display: flex;
+  margin: auto;
   }
 
   .first-toggle-list::before {
