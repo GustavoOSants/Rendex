@@ -175,10 +175,11 @@ body {
 
 .tag {
   display: inline-block;
-  background-color: var(--accent-green-bg);
+  align-self: flex-start;
+  background-color: rgba(34, 197, 94, 0.14);
   color: var(--accent-green);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 4px 10px;
   border-radius: 6px;
   margin-bottom: 14px;
@@ -227,6 +228,12 @@ body {
   border-radius: 3px;
 }
 
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-card);
+  width: 100%;
+}
 
 .footer {
   text-align: center;
