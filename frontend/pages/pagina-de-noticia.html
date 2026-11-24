@@ -11,27 +11,40 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/pagina-noticia.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
-  <!-- Barra de Navegação Superior -->
-  <header class="header">
+ <header class="header">
     <h1 class="logo">Rende<span>x</span></h1>
-
     <nav>
+      <span class="material-symbols-outlined" id="menu-barras" role="button" tabindex="0" aria-label="Abrir menu"
+        aria-expanded="false">
+        menu
+      </span>
       <ul class="nav-links">
         <li><a href="/index.html">Início</a></li>
         <li><a href="/frontend/pages/dashboard.html">Dashboard</a></li>
         <li><a href="#">Trilha de Aprendizado</a></li>
-        <li><a href="/frontend/pages/calculadora.html">Calculadora</a></li>
+        <li><a href="/frontend/pages/calculadora.html" >Calculadora</a></li>
         <li><a href="/frontend/pages/pagina-de-noticia.html" class="active">Radar de Notícias</a></li>
         <li><a href="/frontend/pages/como-sair-das-dividas.html">Sair das Dívidas</a></li>
-        <li><a href="/frontend/pages/cadastro.html"><svg width="24" height="24" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M6.5 7.5c0 3.035 2.465 5.5 5.5 5.5s5.5-2.465 5.5-5.5S15.035 2 12 2a5.503 5.503 0 0 0-5.5 5.5Zm1.5 0c0-2.205 1.795-4 4-4s4 1.795 4 4-1.795 4-4 4-4-1.795-4-4Zm10.57 10.91 1.015 3.785 1.45-.39-1.015-3.785a4.762 4.762 0 0 0-4.59-3.52H8.57a4.752 4.752 0 0 0-4.59 3.52l-1.015 3.785 1.45.39L5.43 18.41A3.253 3.253 0 0 1 8.57 16h6.86c1.47 0 2.76.99 3.14 2.41Z"
-                fill="currentColor" />
-            </svg></a></li>
+        <li class="user-menu">
+          <details>
+            <summary aria-label="Abrir menu de Login e Cadastro">
+              <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.5 7.5c0 3.035 2.465 5.5 5.5 5.5s5.5-2.465 5.5-5.5S15.035 2 12 2a5.503 5.503 0 0 0-5.5 5.5Zm1.5 0c0-2.205 1.795-4 4-4s4 1.795 4 4-1.795 4-4 4-4-1.795-4-4Zm10.57 10.91 1.015 3.785 1.45-.39-1.015-3.785a4.762 4.762 0 0 0-4.59-3.52H8.57a4.752 4.752 0 0 0-4.59 3.52l-1.015 3.785 1.45.39L5.43 18.41A3.253 3.253 0 0 1 8.57 16h6.86c1.47 0 2.76.99 3.14 2.41Z"
+                  fill="currentColor" />
+              </svg>
+            </summary>
+            <div class="user-menu-options">
+              <a href="/frontend/pages/login.html">Login</a>
+              <a href="/frontend/pages/cadastro.html">Cadastro</a>
+            </div>
+          </details>
+        </li>
       </ul>
     </nav>
   </header>
@@ -65,6 +78,7 @@
   </footer>
   
   <script src="../js/load-news.js"></script>
+  <script src="../js/menu.js"></script>
 </body>
 
 </html>
