@@ -389,7 +389,6 @@ body {
   color: var(--button-text-color);
   border: none;
   transition: 300ms ease-out;
-  margin-bottom: 1.6vh;
 }
 
 .btn-calcular:hover {
@@ -400,14 +399,25 @@ body {
 
 .btn-comparar {
   background-color: transparent;
+  color: var(--bg-button);
+  border: 0.125rem solid var(--bg-button);
+  transition: 300ms ease-out;
+  margin-top: 0.5rem;
+}
+
+.btn-comparar:hover {
+  background-color: var(--bg-button);
+  color: var(--header-texto);
+}
+.btn-excluir{
+  background-color: transparent;
   color: var(--text-danger-color);
   border: 0.125rem solid var(--text-danger-color);
   transition: 300ms ease-out;
 }
-
-.btn-comparar:hover {
+.btn-excluir:hover{
   background-color: var(--text-danger-color);
-  color: white;
+  color: var(--header-texto);
 }
 
 /* RESULTADOS */
@@ -611,15 +621,3 @@ tbody tr:nth-child(even) {
   font-size: 11px;
 }
 
-@media screen and (min-width: 769px) {
-  #menu-barras {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-  }
-
-  
-}

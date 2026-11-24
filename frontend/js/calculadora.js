@@ -21,6 +21,8 @@ let taxaBruta = "";
 let tempo = "";
 let mensalidade = "";
 
+let ctx = document.getElementById("myChart");
+
 btnCalcular.addEventListener("click", function () {
   const tabela = document.getElementById("tabela");
 
@@ -88,8 +90,6 @@ btnCalcular.addEventListener("click", function () {
     // Área do grafico
 
     const anos = acumulado.map((_, index) => `Ano ${index + 1}`);
-
-    const ctx = document.getElementById("myChart");
 
     if (compararOn) {
       if (
@@ -165,6 +165,9 @@ let capitalInicialComparar = "";
 let taxaBrutaComparar = "";
 let tempoComparar = "";
 let mensalidadeComparar = "";
+const btnExcluir = document.createElement("button");
+let div = document.querySelector(".tabela-container2");
+
 
 btnComparar.addEventListener("click", function () {
   capitalInicialComparar = document.getElementById("capitalInicial").value;
@@ -182,22 +185,22 @@ btnComparar.addEventListener("click", function () {
   ) {
     aviso.textContent = "Use dados diferentes para comparar";
     form.appendChild(aviso);
-  } else if (capitalInicialComparar === "" || taxaBrutaComparar === "" || tempoComparar === "") {
+  } else if (
+    capitalInicialComparar === "" ||
+    taxaBrutaComparar === "" ||
+    tempoComparar === ""
+  ) {
     aviso.textContent = "Adicione valores para que seja possivel calcular";
     form.appendChild(aviso);
-  } 
-  
-  else {
+  } else {
     aviso.textContent = "";
     graficoAtual.destroy();
     acumuladoComparar = [];
     compararOn = true;
     form.reset();
 
-
     const sectionTabelas = document.getElementById("tabela-section");
 
-    let div = document.querySelector(".tabela-container2");
 
     if (!div) {
       // 2. Se NÃO existe (primeiro clique), cria a div e adiciona na section
@@ -293,8 +296,6 @@ btnComparar.addEventListener("click", function () {
 
     sectionTabelas.appendChild(div);
 
-    const ctx = document.getElementById("myChart");
-
     const anos = [];
 
     // for (i = 0 ; i < acumuladoComparar.length/2; i++){
@@ -302,7 +303,7 @@ btnComparar.addEventListener("click", function () {
     //   anos.push(`Acumulado no ivestimento 2 no ano ${i + 1}`);
     // }
 
-    if (acumulado.length > acumuladoComparar) {
+    if (acumulado.length >= acumuladoComparar.length) {
       for (i = 0; i < acumulado.length; i++) {
         anos.push(`Ano ${i + 1}`);
       }
@@ -338,5 +339,46 @@ btnComparar.addEventListener("click", function () {
         maintainAspectRatio: false,
       },
     });
+
+    btnExcluir.type = "button";
+    btnExcluir.className = "btn-excluir";
+    btnExcluir.textContent = "Excluir segunda tabela";
+    form.appendChild(btnExcluir);
+    
   }
 });
+
+btnExcluir.addEventListener("click", function () {
+    div.remove();
+
+        graficoAtual.destroy();
+
+const anos = []
+for(i = 0 ; i < acumulado.length; i++){
+  anos.push(`Anos ${i + 1}`)
+}
+
+    total.textContent = `R$ ${acumulado[acumulado.length - 1]}`;
+
+
+    graficoAtual = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: anos,
+          datasets: [
+            {
+              label: "Montante",
+              data: acumulado,
+              borderWidth: 1,
+              backgroundColor: "#22345D",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+      compararOn = false;
+    btnExcluir.remove();
+  });
