@@ -1,5 +1,6 @@
 const menuBotao = document.getElementById("menu-barras");
 const menuLinks = document.querySelector(".nav-links");
+const menuOptions = document.querySelectorAll('.user-menu-options');
 
 if (menuBotao && menuLinks) {
   function alternarMenu() {
@@ -31,3 +32,17 @@ if (menuBotao && menuLinks) {
     });
   });
 }
+
+menuOptions.forEach((option) => {
+  if (!localStorage.getItem("sessao")) return;
+
+  option.innerHTML = `
+    <a href="/frontend/pages/dashboard.html">Dashboard</a>
+    <a href="#" id="logout">Sair</a>
+  `;
+  option.querySelector("#logout").addEventListener("click", (event) => {
+    event.preventDefault();
+    localStorage.removeItem("sessao");
+    window.location.href = "/frontend/pages/login.html";
+  });
+})
