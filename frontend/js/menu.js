@@ -37,7 +37,7 @@ menuOptions.forEach((option) => {
   if (!localStorage.getItem("sessao")) return;
 
   option.innerHTML = `
-    <a href="/frontend/pages/dashboard.html">Dashboard</a>
+    <a href="/frontend/pages/planos.html">Planos</a>
     <a href="#" id="logout">Sair</a>
   `;
   option.querySelector("#logout").addEventListener("click", (event) => {
