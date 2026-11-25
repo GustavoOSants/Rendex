@@ -17,7 +17,7 @@ function obterUsuarios() {
   }
 }
 
-form.addEventListener("submit", async function (event) {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const nome = document.getElementById("nome").value.trim();
@@ -32,18 +32,16 @@ form.addEventListener("submit", async function (event) {
 
   const usuarios = obterUsuarios();
 
-  if (usuarios.some((u) => u.email === email)) {
+  if (usuarios.some((user) => user.email === email)) {
     alert("Este e-mail já está cadastrado.");
     return;
   }
 
-  // Salt aleatório para que senhas iguais não gerem o mesmo hash
   const salt = crypto.randomUUID();
   const senhaHash = await gerarHash(salt + senha);
-  console.log("🚀 ~ senhaHash:", senhaHash)
 
   usuarios.push({ nome, email, salt, senhaHash });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-  // window.location.href = "/frontend/pages/login.html";
+  window.location.href = "/frontend/pages/login.html";
 });

@@ -23,7 +23,7 @@ form.addEventListener("submit", async function (event) {
   const senha = document.getElementById("password").value;
 
   const usuarios = obterUsuarios();
-  const usuario = usuarios.find((u) => u.email === email);
+  const usuario = usuarios.find((user) => user.email === email);
 
   if (!usuario) {
     alert("E-mail ou senha incorretos.");
@@ -37,7 +37,6 @@ form.addEventListener("submit", async function (event) {
     return;
   }
 
-  // Sessão: só o necessário, nunca a senha nem o hash
   localStorage.setItem(
     "sessao",
     JSON.stringify({ nome: usuario.nome, email: usuario.email })
