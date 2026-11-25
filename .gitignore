@@ -1,0 +1,10 @@
+# Chaves e variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Dependências
+node_modules/
+
+# Arquivos temporários
+*.log
