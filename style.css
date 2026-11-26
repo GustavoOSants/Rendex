@@ -2,15 +2,15 @@
 
 /* CORES DO RENDEX */
 :root {
-  --bg: #0c1426;
-  --panel: #141f35;
-  --panel-light: #17243d;
-  --border: #263653;
-  --text: #e7ecfa;
-  --muted: #8b9ab9;
-  --green: #08d39a;
+  --bg: #0a1120;
+  --panel: #131d33;
+  --panel-light: #0d1526;
+  --border: #1c3a3a;
+  --text: #e9eefc;
+  --muted: #8b9ac0;
+  --green: #1fd18b;
   --orange: #ff6a4d;
-  --dark: #080f1e;
+  --dark: #06251a;
 }
 
 /* CONFIGURAÇÕES GERAIS */
@@ -752,7 +752,7 @@ textarea {
 
 .footer-content a {
   color: #8b9ab9;
-  font-size: 6px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -769,7 +769,7 @@ textarea {
 
 .footer-bottom p {
   color: #8b9ab9;
-  font-size: 6px;
+  font-size: 11px;
   margin: 0;
 }
 
@@ -1181,12 +1181,12 @@ textarea {
 .debts-section .section-heading p {
   max-width: 520px;
   margin: 0 auto;
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .debts-section .steps-title {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 11px;
 }
 
@@ -1203,13 +1203,13 @@ textarea {
 }
 
 .debts-section .step-card h3 {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 6px;
 }
 
 .debts-section .step-card p {
-  font-size: 10px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .debts-section .debt-info-grid {
@@ -1225,14 +1225,14 @@ textarea {
 }
 
 .debts-section .debt-info-card h3 {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
 .debts-section .debt-info-card p {
-  font-size: 10px;
-  line-height: 1.55;
-  margin-top: 5px;
+  font-size: 13px;
+  line-height: 1.65;
+  margin-top: 7px;
 }
 
 .debts-section .debt-info-card strong {
@@ -1406,4 +1406,296 @@ textarea {
     min-height: 180px;
     max-height: 180px;
   }
+}
+
+/* =====================================================
+   CORREÇÕES DO INDEX
+   Mantém o visual original do Rendex.
+===================================================== */
+
+/* Hover dos dois botões principais */
+.hero-buttons .btn.green {
+  background: var(--green) !important;
+  color: #081426 !important;
+  border: 1px solid var(--green) !important;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.hero-buttons .btn.green:hover,
+.hero-buttons .btn.green:focus-visible {
+  background: transparent !important;
+  color: var(--green) !important;
+  border-color: var(--green) !important;
+  transform: translateY(-1px);
+}
+
+.hero-buttons .btn.orange {
+  background: transparent !important;
+  color: var(--orange) !important;
+  border: 1px solid var(--orange) !important;
+  transition:
+    background-color 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.hero-buttons .btn.orange:hover,
+.hero-buttons .btn.orange:focus-visible {
+  background: var(--orange) !important;
+  color: #081426 !important;
+  border-color: var(--orange) !important;
+  transform: translateY(-1px);
+}
+
+/* Hover consistente nos demais botões */
+.btn:not(.hero-buttons .btn):hover,
+.small-btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:focus-visible,
+.small-btn:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* Calculadora: formulário, valor total e gráfico alinhados */
+.calculator-layout {
+  display: grid;
+  grid-template-columns: minmax(245px, 270px) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+}
+
+.calculator-form {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+
+.calculator-result {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+  gap: 12px;
+}
+
+.calculator-result .total-card {
+  width: 100%;
+  min-height: 64px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Valor destacado em branco */
+.calculator-result .total-card strong {
+  color: #ffffff !important;
+  white-space: nowrap;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.calculator-result .chart-card {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 240px;
+  display: flex;
+  align-items: stretch;
+}
+
+.calculator-result .chart-bars {
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  display: flex;
+  align-items: end;
+}
+
+/* MENU HAMBÚRGUER */
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  flex: 0 0 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    width: calc(100% - 24px);
+    min-height: 60px;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .navbar > .logo {
+    font-size: 22px;
+    flex: 0 0 auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 8px 0 4px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .calculator-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .calculator-form {
+    height: auto;
+  }
+
+  .calculator-result .total-card {
+    flex-wrap: wrap;
+  }
+
+  .calculator-result .total-card strong {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* AJUSTES FINAIS SOLICITADOS */
+
+/* Remove as imagens dos cards de notícias */
+#noticias .news-card img,
+#noticias .news-card .news-image {
+  display: none !important;
+}
+
+/* Afasta o botão "Veja mais notícias" dos cards */
+#noticias .news-more-button {
+  margin-top: 30px;
+}
+
+#noticias .news-more-button .btn {
+  margin-top: 0;
+}
+
+/* Botão para acessar a página de dívidas */
+.debts-section .debt-more-button {
+  margin-top: 30px;
+}
+
+.debts-section .debt-more-button .btn {
+  min-width: 295px;
+  min-height: 40px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  background: var(--green) !important;
+  color: #081426 !important;
+  border: 1px solid var(--green) !important;
+}
+
+/* AUMENTA O TAMANHO DO RODAPÉ */
+.footer-content a {
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+}
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 650px) {
+  .debts-section .debt-more-button .btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .footer-content a {
+    font-size: 13px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* GARANTE O R MAIÚSCULO NO NOME RENDEX */
+.logo,
+.hero-content h1 {
+  text-transform: none;
 }

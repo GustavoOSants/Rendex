@@ -12,16 +12,18 @@
     <header class="header">
       <nav class="navbar">
         <a href="#inicio" class="logo" aria-label="Rendex - Início">
-          rende<span>x</span>
+          Rende<span>x</span>
         </a>
 
         <div class="nav-links" id="navLinks">
           <a href="#inicio" class="active">Início</a>
-          <a href="#dashboard">Dashboard</a>
+          <a href="frontend/pages/dashboard.html">Dashboard</a>
           <a href="#trilha">Trilha de Aprendizagem</a>
-          <a href="#calculadora">Calculadora</a>
-          <a href="#noticias">Radar de Notícias</a>
-          <a href="#dividas">Sair das Dívidas</a>
+          <a href="frontend/pages/calculadora.html">Calculadora</a>
+          <a href="frontend/pages/pagina-de-noticia.html">Radar de Notícias</a>
+          <a href="frontend/pages/como-sair-das-dividas.html"
+            >Sair das Dívidas</a
+          >
         </div>
       </nav>
     </header>
@@ -31,7 +33,7 @@
       <section class="home" id="inicio">
         <div class="hero">
           <div class="hero-content">
-            <h1>rende<span>x</span></h1>
+            <h1>Rende<span>x</span></h1>
 
             <p class="hero-description">
               Pra quem tá endividado, pra quem tá começando agora e pra quem só
@@ -41,8 +43,14 @@
             </p>
 
             <div class="hero-buttons">
-              <a href="#dashboard" class="btn green">Minha situação →</a>
-              <a href="#dividas" class="btn orange">Tô no vermelho</a>
+              <a href="frontend/pages/dashboard.html" class="btn green"
+                >Minha situação →</a
+              >
+              <a
+                href="frontend/pages/como-sair-das-dividas.html"
+                class="btn orange"
+                >Tô no vermelho</a
+              >
             </div>
           </div>
 
@@ -80,7 +88,7 @@
               <span class="card-link">Ir para seção ↓</span>
             </a>
 
-            <a href="#dashboard" class="info-card">
+            <a href="frontend/pages/dashboard.html" class="info-card">
               <h3>Dashboard</h3>
               <p>
                 Preencha seus ganhos e gastos, descubra pra onde vai sua grana e
@@ -89,7 +97,7 @@
               <span class="card-link">Ir para seção ↓</span>
             </a>
 
-            <a href="#calculadora" class="info-card">
+            <a href="frontend/pages/calculadora.html" class="info-card">
               <h3>Calculadora de juros compostos ↓</h3>
               <p>
                 Simule Tesouro Selic, CDB, LCI/LCA e Poupança lado a lado,
@@ -107,7 +115,10 @@
               <span class="card-link">Ir para seção ↓</span>
             </a>
 
-            <a href="#dividas" class="info-card">
+            <a
+              href="frontend/pages/como-sair-das-dividas.html"
+              class="info-card"
+            >
               <h3>Como sair das dívidas</h3>
               <p>
                 Simulador de tempo de quitação, orientações sobre o Desenrola
@@ -116,7 +127,7 @@
               <span class="card-link">Ir para seção ↓</span>
             </a>
 
-            <a href="#noticias" class="info-card">
+            <a href="frontend/pages/pagina-de-noticia.html" class="info-card">
               <h3>Radar de notícias ↓</h3>
               <p>
                 Principais indicadores econômicos e matérias completas sobre
@@ -233,7 +244,9 @@
                   Organize suas finanças, entenda seus gastos, receitas e
                   orçamento.
                 </p>
-                <a href="#dashboard" class="btn green">Ir para o Dashboard →</a>
+                <a href="frontend/pages/dashboard.html" class="btn green"
+                  >Ir para o Dashboard →</a
+                >
               </div>
             </div>
           </article>
@@ -250,7 +263,7 @@
                 <h3>Quiz Investimentos</h3>
                 <small>Módulo 2</small>
                 <p>Conheça os primeiros passos para investir.</p>
-                <a href="#calculadora" class="btn green">
+                <a href="frontend/pages/calculadora.html" class="btn green">
                   Ir para a Calculadora →
                 </a>
               </div>
@@ -318,8 +331,10 @@
           <p class="news-loading">Carregando as últimas notícias...</p>
         </div>
 
-        <div class="center-button">
-          <a href="#newsGrid" class="btn green">Veja mais notícias ↓</a>
+        <div class="center-button news-more-button">
+          <a href="frontend/pages/pagina-de-noticia.html" class="btn green"
+            >Veja mais notícias ↓</a
+          >
         </div>
       </section>
 
@@ -418,6 +433,12 @@
             </p>
           </article>
         </div>
+
+        <div class="center-button debt-more-button">
+          <a href="frontend/pages/como-sair-das-dividas.html" class="btn green"
+            >Veja mais sobre como sair das dívidas</a
+          >
+        </div>
       </section>
     </main>
 
@@ -449,7 +470,7 @@
     </footer>
 
     <!-- MENU HAMBÚRGUER: ARQUIVO ÚNICO -->
-    <script src="menuhamburg.js"></script>
+    <script src="menuHamburguer.js"></script>
 
     <!-- DESTAQUE DA SEÇÃO ATUAL NO MENU -->
     <script>
@@ -516,18 +537,6 @@
             const tag = document.createElement("span");
             tag.className = "news-tag";
             tag.textContent = classificarNoticia(noticia.title || "");
-
-            if (noticia.image_url && /^https?:\/\//i.test(noticia.image_url)) {
-              const imagem = document.createElement("img");
-              imagem.className = "news-image";
-              imagem.src = noticia.image_url;
-              imagem.alt = noticia.title
-                ? "Imagem: " + noticia.title
-                : "Imagem da notícia";
-              imagem.loading = "lazy";
-              imagem.onerror = () => imagem.remove();
-              card.appendChild(imagem);
-            }
 
             const titulo = document.createElement("h3");
             titulo.textContent = noticia.title || "Notícia sem título";
