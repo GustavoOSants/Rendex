@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendex - Trilha de Aprendizado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-quiz-1.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+
+            <!--mudar o # para a tela iniciall--> 
+            <a href="#" class="logo">Rende<span>x</span></a>
+
+            <nav class="nav-links">
+
+                <!--fazer conexao com as paginas--> 
+                <a href="#">Início</a>
+                <a href="#">Dashboard</a>
+                <a href="#" class="active">Trilha de Aprendizado</a>
+                <a href="#">Calculadora</a>
+                <a href="#">Radar de Notícias</a>
+                <a href="#">Sair das Dívidas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="quiz-wrapper">
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span class="question-counter">PERGUNTA 01 DE 05</span>
+                    <span class="progress-percent">20%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <div class="questions-container">
+
+                <!--Pergunta 1-->
+                <section class="question-item">
+                    <div class="question-header">
+                        <h1 class="question-title">O que significa ter um orçamento pessoal?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Anotar apenas as compras grandes</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Fazer anotações é essencial para uma boa organização financeira, porém ignorar as compras menores pode acabar deixando passar gastos irrelevantes ou detalhes importantes.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Planejar e acompanhar receitas e despesas</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Ter um planejamento e acompanhar as suas receitas e despesas é muito importante para ter um bom orçamento pessoal.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Guardar todo o dinheiro recebido</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Guardar dinheiro é importante, porem isso acaba sendo uma atitude não planejada perante a existencia de gastos diarios e mensais.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Usar o limite do cartão como renda</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Usar o limite do cartão de crédito como renda é o caminho mais rápidos para o endividamento pois o limite não é seu dinheiro, é um empréstimo pré-aprovado de curto prazo com os juros mais altos do mercado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 2-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">O que é uma reserva de emergência?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Um valor de liquido usado para imprevistos</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: A reserva de emergência deve ficar em aplicações seguras e com fácil acesso para cobrir possiveis imprevistos do dia a dia.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">O saldo disponível no cheque especial</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Cheque especial é crédito caro do banco, não dinheiro seu reservado para emergências.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Dinheiro guardado para viagens de férias</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Viagens são metas planejadas, não emergências. A reserva serve para imprevistos como perda de renda ou problemas de saúde.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">A soma das parcelas do cartão</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Parcelas futuras são compromissos de gasto, e não uma reserva financeira.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 3-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">Qual é o principal risco de pagar apenas o valor mínimo da fatura?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Perder o cashback das compras à vista</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O maior impacto não é o cashback, mas sim os juros altos que incidem sobre o saldo restante.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Zerar o limite do cartão para sempre</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O limite fica restrito conforme o saldo devedor, não zerado permanentemente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Bloquear automaticamente a conta corrente</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Pagar o mínimo evita atraso imediato, mas gera juros sobre o restante da fatura.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Entrar no crédito rotativo com juros elevados</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: O saldo não pago entra no rotativo da fatura, onde os juros costumam ser altos e fazem a dívida crescer rápido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 4-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">O que são despesas fixas no orçamento do mes?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Custos recorrentes e previsíveis</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Despesas fixas tendem a ter valor previsível todo mês, facilitando o planejamento do orçamento.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Gastos que mudam toda semana por impulso</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Gastos variáveis ou por impulso mudam bastante e não são tão previsiveis.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Apenas impostos pagos uma vez por ano</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Gastos anuais também entram no planejamento, mas despesas fixas são ao decorrer dos meses ou dias.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Qualquer compra feita no débito</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: A forma de pagamento não define sozinha se uma despesa é fixa ou variável.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 5-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">Qual é o primeiro passo para organizar o dinheiro no mês?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Investir tudo antes de saber quanto gastar
+                                </span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Investir o seu dinheiro sem o conhecimento de quanto sera necessario vai prejudicar a sua vida economica.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Pedir um empréstimo para testar o limite</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Emprestimos devem sempre ser feitos com cuidado e muito planejamento dependendo da quantia solicitada.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Mapear quanto dinheiro entra e quanto sai todos os meses</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Mapear seus ganhos e seus custos diversos facilita muito ao criar o seu planejamento financeiro.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Cancelar todas as contas bancárias</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Cancelar certas contas pode ajudar na economia porem todas elas podem render outros problemas e dificultar a sua vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--tela final-->
+                <section id="telaResultado" class="question-item hidden">
+                    <div class="resultado-painel">
+                        <h1 id="tituloResultado" class="resultado-titulo">Resultado final</h1>
+
+                        <div class="resultado-circulo">
+                            <span class="resultado-placar">
+                                <span id="pontuacaoFinal">0</span>/<span id="totalPerguntasFinal">5</span>
+                            </span>
+                            <span class="resultado-rotulo">Acertos</span>
+                        </div>
+
+                        <p class="resultado-frase">
+                            O importante é aprender tanto com seus
+                            <span class="destaque-erro">erros</span> quanto com seus
+                            <span class="destaque-acerto">acertos</span>
+                        </p>
+
+                        <p id="mensagemOtima" class="resultado-complemento hidden">
+                            Ótimo desempenho na trilha de finanças básicas.
+                        </p>
+                        <p id="mensagemBoa" class="resultado-complemento hidden">
+                            Boa tentativa, você pode refazer o quiz futuramente.
+                        </p>
+                    </div>
+                </section>
+                
+            </div>
+
+            <div class="actions-row" id="actionsRow">
+                <button id="confirmBtn" class="btn-confirm" disabled>
+                    <span>Confirmar resposta</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <button id="nextBtn" class="btn-next hidden">
+                    <span data-rotulo="proxima">Proxima questão</span>
+                    <span data-rotulo="resultado" class="hidden">Ver resultado</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <!-- mudar o # para a tela inicial -->
+                <a id="linkInicio" href="#" class="btn-inicio-final hidden">
+                    <span>Página Inicial</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="motivational-tip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                <span>Aprenda com cada resposta, mesmo quando errar.</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com">Linkedin</a>
+            <a href="https://www.github.com">Github</a>
+            
+             <!-- nao sei oq colocar no # -->
+            <a href="#">Patrocinadores</a>
+        </div>
+        <p class="copyright">© 2026 Todos os direitos reservados</p>
+    </footer>
+
+    <script src="quiz-1.js"></script>
+</body>
+</html>
