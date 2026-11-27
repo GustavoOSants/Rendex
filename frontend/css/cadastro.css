@@ -1,26 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
 
 :root {
-  --fundo: #0A1120;
-  --card: #131D33;
-  --borda: #26365A;
-  --verde: #1FD18B;
-  --verde-escuro: #06251A;
-  --texto: #E9EEFC;
-  --branco: #FFFFFF;
-  --azul: #7FA6FF;
-  --laranja: #FF6A4D;
-  --laranja-escuro: #7A2E1D;
-  --apoio: #1C3A3A;
-  --campo: #0A1120;
+  --bg-page: #0A1120;
+  --bg-navbar: #0b111c;
+  --bg-card: #131D33;
+  --border-card: #26365A;
+  --accent-green: #1FD18B;
+  --accent-green-bg: #06251A;
+  --text-primary: #E9EEFC;
+  --text-secondary: #8B9AC0;
+  --text-muted: #64748b;
 
   /* Cabeçalho (igual ao index) */
   --header-bg: rgba(13, 21, 38, 0.92);
   --header-borda: #1f2b4a;
-  --header-texto: #f1f5f9;
+  --header-texto: #E9EEFC;
   --header-muted: #8b97b3;
-  --header-verde: #22d494;
-  --header-laranja: #ff5a3c;
+  --header-verde: #1FD18B;
+  --header-laranja: #FF6A4D;
   --container: 1152px;
   --gutter: 24px;
 }
@@ -35,8 +32,8 @@
 
 body {
   font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background-color: var(--fundo);
-  color: var(--texto);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -216,7 +213,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
-    background-color: var(--fundo);
+    background-color: var(--bg-page);
     border-bottom: 1px solid var(--header-borda);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
@@ -254,7 +251,7 @@ main {
 }
 
 .card {
-  background-color: var(--card);
+  background-color: var(--bg-card);
   padding: 1.5rem;
   margin: 4rem 0 4rem 0;
   border-radius: 8px;
@@ -294,10 +291,10 @@ form {
   & input {
     padding: .825rem;
     border-radius: 6px;
-    background-color: var(--campo);
-    border: 1px solid var(--borda);
+    background-color: var(--bg-page);
+    border: 1px solid var(--border-card);
     margin-bottom: 1rem;
-    color: var(--texto)
+    color: var(--text-primary)
   }
 }
 
@@ -305,8 +302,8 @@ form {
   padding: .825rem;
   border-radius: 8px;
   border: none;
-  background-color: var(--verde);
-  color: var(--verde-escuro);
+  background-color: var(--accent-green);
+  color: var(--accent-green-bg);
   font-weight: 800;
   font-size: 16px;
   cursor: pointer;
@@ -331,7 +328,7 @@ form {
 }
 
 .footer {
-  background-color: var(--bg-header);
+  background-color: var(--bg-page);
   border-top: 1px solid var(--header-borda);
 
   min-height: 90px;
@@ -342,6 +339,10 @@ form {
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  & ul {
+    list-style: none;
+  }
 }
 
 .footer-links {
@@ -351,11 +352,16 @@ form {
 
 .footer-links a {
   text-decoration: none;
-  color: var(--p-color);
-  font-size: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--text-primary);
+  }
 }
 
 .footer p {
-  color: var(--p-color);
-  font-size: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
 }
