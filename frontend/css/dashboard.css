@@ -1,29 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap");
 
-/* ==========================================
-   RENDEX | DASHBOARD FINANCEIRO
-   ========================================== */
-
 :root {
-  --fundo: #0A1120;
-  --card: #131D33;
-  --borda: #26365A;
-  --verde: #1FD18B;
-  --verde-escuro: #06251A;
-  --texto: #E9EEFC;
-  --branco: #FFFFFF;
-  --laranja: #FF6A4D;
+  --bg-page: #0A1120;
+  --bg-navbar: #0b111c;
+  --bg-card: #131D33;
+  --border-card: #26365A;
+  --accent-green: #1FD18B;
+  --accent-green-bg: #06251A;
+  --text-primary: #E9EEFC;
+  --text-secondary: #8B9AC0;
+  --text-muted: #64748b;
   --laranja-escuro: #7A2E1D;
-  --apoio: #1C3A3A;
-  --campo: #0A1120;
 
   /* Cabeçalho (igual ao index) */
   --header-bg: rgba(13, 21, 38, 0.92);
   --header-borda: #1f2b4a;
   --header-texto: #f1f5f9;
   --header-muted: #8b97b3;
-  --header-verde: #22d494;
-  --header-laranja: #ff5a3c;
+  --header-verde: #1FD18B;
+  --header-laranja: #FF6A4D;
   --container: 1152px;
   --gutter: 24px;
 }
@@ -38,8 +33,8 @@
 
 body {
   font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background-color: var(--fundo);
-  color: var(--texto);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -219,7 +214,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
-    background-color: var(--fundo);
+    background-color: var(--header-bg);
     border-bottom: 1px solid var(--header-borda);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
@@ -283,8 +278,8 @@ main {
 /* CARTÕES */
 
 .card {
-  background-color: var(--card);
-  border: 1px solid var(--borda);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
   border-radius: 14px;
   padding: 24px;
   min-width: 0;
@@ -340,31 +335,31 @@ main {
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
-  border: 1px solid var(--borda);
+  border: 1px solid var(--border-card);
   border-radius: 8px;
-  color: var(--texto);
+  color: var(--text-primary);
   cursor: pointer;
   transition: border-color 0.2s, background-color 0.2s;
 }
 
 .opcao-checkbox-renda:hover {
-  border-color: var(--verde);
-  background-color: var(--verde-escuro);
+  border-color: var(--accent-green);
+  background-color: var(--accent-green-bg);
 }
 
 .opcao-checkbox-gasto:hover {
-  border-color: var(--laranja);
+  border-color: var(--header-laranja);
   background-color: var(--laranja-escuro);
 }
 
 .opcao-checkbox-renda input {
-  accent-color: var(--verde);
+  accent-color: var(--accent-green);
   width: 16px;
   height: 16px;
 }
 
 .opcao-checkbox-gasto input {
-  accent-color: var(--laranja);
+  accent-color: var(--header-laranja);
   width: 16px;
   height: 16px;
 }
@@ -387,10 +382,10 @@ input,
 textarea {
   width: 100%;
   padding: 12px;
-  background-color: var(--campo);
-  border: 1px solid var(--borda);
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-card);
   border-radius: 7px;
-  color: var(--branco);
+  color: var(--text-primary);
   font-size: 14px;
   outline: none;
   transition: border-color 0.2s;
@@ -403,7 +398,7 @@ textarea {
 }
 
 input:focus {
-  border-color: var(--verde);
+  border-color: var(--accent-green);
   box-shadow: 0 0 0 2px #1FD18B22;
 }
 
@@ -428,7 +423,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .ganhos {
   & h4 {
     margin-bottom: 12px;
-    color: var(--verde);
+    color: var(--accent-green);
   }
 
   & input {
@@ -439,7 +434,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .gastos {
   & h4 {
     margin-bottom: 12px;
-    color: var(--laranja);
+    color: var(--header-laranja);
   }
 
   & input {
@@ -506,7 +501,7 @@ button {
 .add-gastos {
   background-color: transparent;
   color: var(--header-texto);
-  border: 2px solid var(--verde);
+  border: 2px solid var(--header-verde);
 }
 
 .add-gastos:hover {
@@ -515,8 +510,8 @@ button {
 }
 
 .btn-primario {
-  background-color: var(--verde);
-  color: var(--verde-escuro);
+  background-color: var(--header-verde);
+  color: var(--accent-green-bg);
 }
 
 .btn-primario:hover {
@@ -526,8 +521,8 @@ button {
 
 .btn-secundario {
   background-color: transparent;
-  border: 2px solid var(--verde);
-  color: var(--verde);
+  border: 2px solid var(--header-verde);
+  color: var(--header-verde);
 }
 
 .btn-secundario:hover {
@@ -629,18 +624,21 @@ button:disabled {
 }
 
 .footer {
-  margin-top: 0;
-  background-color: var(--fundo);
-  border-top: 1px solid var(--borda);
+  background-color: var(--bg-page);
+  border-top: 1px solid var(--header-borda);
 
   min-height: 90px;
-  margin-top: 50px;
+  margin-top: 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  & ul {
+    list-style: none;
+  }
 }
 
 .footer-links {
@@ -650,11 +648,16 @@ button:disabled {
 
 .footer-links a {
   text-decoration: none;
-  color: var(--header-muted);
-  font-size: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--text-primary);
+  }
 }
 
 .footer p {
-  color: var(--header-muted);
-  font-size: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
 }
