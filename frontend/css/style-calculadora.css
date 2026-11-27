@@ -308,7 +308,7 @@ body {
 }
 
 @media (max-width: 680px) {
-  .area-simulacao{
+  .area-simulacao {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -409,13 +409,15 @@ body {
   background-color: var(--bg-button);
   color: var(--header-texto);
 }
-.btn-excluir{
+
+.btn-excluir {
   background-color: transparent;
   color: var(--text-danger-color);
   border: 0.125rem solid var(--text-danger-color);
   transition: 300ms ease-out;
 }
-.btn-excluir:hover{
+
+.btn-excluir:hover {
   background-color: var(--text-danger-color);
   color: var(--header-texto);
 }
@@ -446,8 +448,8 @@ body {
   justify-content: space-between;
 }
 
-@media (max-width: 350px){
-  .capital-aportado{
+@media (max-width: 350px) {
+  .capital-aportado {
     flex-direction: column;
   }
 }
@@ -491,7 +493,7 @@ body {
   width: 100%;
 }
 
-canvas{
+canvas {
   width: 100%;
 }
 
@@ -522,24 +524,24 @@ canvas{
   padding: 1.5vw;
   overflow-x: auto;
   width: 100%;
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 
 
 }
 
-.tabela-container2{
+.tabela-container2 {
   border: 1px dashed var(--border-color);
   border-radius: 6px;
   padding: 1.5vw;
   overflow-x: auto;
   width: 100%;
-    font-size: 0.8rem;
+  font-size: 0.8rem;
   margin-left: 0.5rem;
 }
 
 
-@media (max-width: 720px){
-  .tabela-section{
+@media (max-width: 720px) {
+  .tabela-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -548,7 +550,7 @@ canvas{
     font-size: 0.8rem;
   }
 
-  .tabela-container2{
+  .tabela-container2 {
     margin-left: 0;
     margin-top: 0.5rem;
   }
@@ -576,7 +578,7 @@ th {
 td {
   height: 30px;
   border-right: 1px solid #172541;
-  
+
 }
 
 tbody tr:nth-child(odd) {
@@ -593,16 +595,20 @@ tbody tr:nth-child(even) {
 
 .footer {
   background-color: var(--bg-header);
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--header-borda);
 
   min-height: 90px;
-  margin-top: 50px;
+  margin-top: 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  & ul {
+    list-style: none;
+  }
 }
 
 .footer-links {
@@ -613,11 +619,15 @@ tbody tr:nth-child(even) {
 .footer-links a {
   text-decoration: none;
   color: var(--p-color);
-  font-size: 11px;
+  font-size: 12px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--h2-color);
+  }
 }
 
 .footer p {
   color: var(--p-color);
-  font-size: 11px;
+  font-size: 12px;
 }
-
