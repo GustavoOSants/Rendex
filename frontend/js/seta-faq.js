@@ -1,4 +1,6 @@
-const detalhes = document.querySelectorAll("details");
+const detalhes = document.querySelectorAll(
+    ".first-toggle-list details, .second-toggle-list details"
+);
 
 detalhes.forEach((item) => {
     const seta = item.querySelector("summary svg");
