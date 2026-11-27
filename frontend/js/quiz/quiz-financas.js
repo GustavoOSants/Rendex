@@ -24,6 +24,7 @@ const rotuloResultado = botaoProxima.querySelector('[data-rotulo="resultado"]');
 let perguntaAtual = 0;
 let cartaoSelecionado = null;
 let pontuacao = 0;
+let respostasConfirmadas = 0;
 let jaRespondeu = false;
 
 function formatarNumero(numero) {
@@ -35,13 +36,17 @@ function definirRotuloBotao(tipo) {
   rotuloResultado.classList.toggle("hidden", tipo !== "resultado");
 }
 
-function atualizarProgresso(indice) {
+function atualizarBarraProgresso() {
   const total = todasPerguntas.length;
-  const percentual = Math.round(((indice + 1) / total) * 100);
+  const percentual = Math.round((respostasConfirmadas / total) * 100);
 
-  contadorPergunta.textContent = `PERGUNTA ${formatarNumero(indice + 1)} DE ${formatarNumero(total)}`;
   porcentagemProgresso.textContent = `${percentual}%`;
   barraProgresso.style.width = `${percentual}%`;
+}
+
+function atualizarContadorPergunta(indice) {
+  const total = todasPerguntas.length;
+  contadorPergunta.textContent = `PERGUNTA ${formatarNumero(indice + 1)} DE ${formatarNumero(total)}`;
 }
 
 function prepararEventosDaPergunta(secaoPergunta) {
@@ -76,7 +81,8 @@ function mostrarPergunta(indice) {
   mensagemOtima.classList.add("hidden");
   mensagemBoa.classList.add("hidden");
 
-  atualizarProgresso(indice);
+  atualizarContadorPergunta(indice);
+  atualizarBarraProgresso();
 
   linhaAcoes.classList.remove("answered");
   botaoConfirmar.classList.remove("hidden", "desativado");
@@ -106,6 +112,9 @@ function confirmarResposta() {
     cartaoSelecionado.classList.add("wrong");
   }
 
+  respostasConfirmadas++;
+  atualizarBarraProgresso();
+
   botaoConfirmar.disabled = true;
   botaoConfirmar.classList.add("desativado");
 
@@ -120,8 +129,8 @@ function mostrarResultadoFinal() {
   telaResultado.classList.remove("hidden");
 
   contadorPergunta.textContent = "Concluido";
-  porcentagemProgresso.textContent = "100%";
-  barraProgresso.style.width = "100%";
+  respostasConfirmadas = total;
+  atualizarBarraProgresso();
 
   pontuacaoFinal.textContent = pontuacao;
   totalPerguntasFinal.textContent = total;
