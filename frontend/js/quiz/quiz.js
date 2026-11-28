@@ -1,4 +1,5 @@
 const LIMITE_PERGUNTAS = 5;
+const ID_MODULO_QUIZ = "1";
 
 const todasPerguntas = Array.from(
   document.querySelectorAll(".question-item:not(#telaResultado)")
@@ -134,6 +135,10 @@ function mostrarResultadoFinal() {
 
   pontuacaoFinal.textContent = pontuacao;
   totalPerguntasFinal.textContent = total;
+
+  if (pontuacao === total) {
+    localStorage.setItem(`rendex_modulo_${ID_MODULO_QUIZ}_concluido`, "true");
+  }
 
   if (pontuacao >= 4) {
     mensagemOtima.classList.remove("hidden");

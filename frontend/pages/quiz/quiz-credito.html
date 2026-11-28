@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendex - Trilha de Aprendizado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/quiz.css/style-quiz.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+
+            <a href="../../../index.html" class="logo">Rende<span>x</span></a>
+
+            <nav class="nav-links">
+
+                <!--fazer conexao com as paginas--> 
+                <a href="../../../index.html">Início</a>
+                <a href="../dashboard.html">Dashboard</a>
+                <a href="#" class="active">Trilha de Aprendizado</a>
+                <a href="../calculadora.html">Calculadora</a>
+                <a href="../pagina-de-noticia.html">Radar de Notícias</a>
+                <a href="../como-sair-das-dividas.html">Sair das Dívidas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="quiz-wrapper">
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span class="question-counter">PERGUNTA 01 DE 05</span>
+                    <span class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="questions-container">
+
+                <!--Pergunta 1 -->
+                <section class="question-item">
+                    <div class="question-header">
+                        <h1 class="question-title">O que significa ter acesso ao crédito na prática?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Receber dinheiro doado pelo banco sem precisar devolver</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O crédito não é uma doação; o valor utilizado precisa ser devolvido à instituição dentro do prazo combinado.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Usar um valor hoje com o compromisso de pagar no futuro.</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Define com precisão o conceito de antecipar um poder de compra mediante a promessa de pagamento futuro.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Sacar apenas o dinheiro que já está parado na poupança</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Usar dinheiro próprio já guardado configura pagamento à vista ou débito, não uma operação de crédito.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Ter desconto automático garantido em todas as compras</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O crédito é um meio de financiamento ou parcelamento, não um benefício que reduz preços automaticamente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 2-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">Por que instituições financeiras cobram juros ao conceder crédito?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Pagar impostos obrigatórios ao Banco Central</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Embora existam tributos nas operações financeiras os juros pertencem à instituição que empresta o dinheiro.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Compensar a falta de limite no cartão do cliente</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: A cobrança de juros ocorre pelo empréstimo do valor em si, independentemente de o limite ser alto ou baixo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Remunerar o tempo e o risco de não receberem</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Explica os dois pilares principais da taxa de juros: o custo de oportunidade pelo tempo do dinheiro emprestado e o risco de inadimplência.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Transformar compras à vista em parcelas fixas</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O parcelamento é uma forma de pagamento acordada na compra, e não o motivo econômico pelo qual os juros existem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 3-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">O que o limite do cartão de crédito realmente representa?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Uma renda extra somada ao seu salário mensal</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O limite não aumenta a sua renda real, todo valor gasto compromete o seu orçamento futuro.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Um saldo livre que não precisa ser quitado na fatura</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Todo gasto realizado dentro do limite será cobrado integralmente na fatura mensal.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">O valor mínimo exigido para manter a conta aberta</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O limite é uma linha de crédito disponível para uso, não um saldo mínimo de manutenção de conta.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">O máximo que você pode gastar antes de pagar</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Traduz exatamente a função do limite como uma trava de segurança definida pelo banco conforme o perfil do cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 4-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">Para que serve o score de crédito consultado pelos bancos?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Medir o quanto de dinheiro você tem investido</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: A pontuação avalia o histórico de comportamento financeiro e pagamentos, não o saldo atual da conta ou investimentos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Estimar a chance de você pagar suas contas em dia</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Resume o objetivo do score, que é calcular estatisticamente o risco de inadimplência de um consumidor.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Definir o valor máximo do seu salário no emprego</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: A remuneração profissional é definida pelo empregador e pelo mercado de trabalho, sem relação com essa pontuação.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Garantir aprovação imediata em qualquer empréstimo</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Um score alto aumenta as chances de conseguir boas condições, mas cada instituição usa critérios próprios para aprovar crédito.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Pergunta 5-->
+                <section class="question-item hidden">
+                    <div class="question-header">
+                        <h1 class="question-title">O que significa parcelar uma compra no cartão de crédito?</h1>
+                        <p class="question-subtitle">Selecione uma alternativa para continuar</p>
+                    </div>
+
+                    <div class="options-list">
+                        <div class="option-card" data-correct="true">
+                            <div class="option-main">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Dividir o valor total em pagamentos mensais futuros</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Correto: Descreve o funcionamento do parcelamento, em que o valor total compromete o limite do cartão e é cobrado aos poucos nas próximas faturas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Ganhar desconto automático no valor original do item</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: Parcelar não gera desconto automático; em muitos casos, lojas oferecem redução de preço apenas para pagamentos à vista.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">C</span>
+                                <span class="option-text">Usar apenas o saldo disponível na sua conta corrente</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O uso direto do saldo da conta corresponde ao pagamento no débito ou Pix, não ao parcelamento no crédito.</p>
+                            </div>
+                        </div>
+
+                        <div class="option-card" data-correct="false">
+                            <div class="option-main">
+                                <span class="option-letter">D</span>
+                                <span class="option-text">Aumentar o limite total do cartão a cada parcela paga</span>
+                            </div>
+                            <div class="option-feedback">
+                                <p class="feedback-text">Errado: O pagamento das parcelas apenas libera gradualmente o limite que já havia sido consumido pela compra, sem aumentar o teto total do cartão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--tela final-->
+                <section id="telaResultado" class="question-item hidden">
+                    <div class="resultado-painel">
+                        <h1 id="tituloResultado" class="resultado-titulo">Resultado final</h1>
+
+                        <div class="resultado-circulo">
+                            <span class="resultado-placar">
+                                <span id="pontuacaoFinal">0</span>/<span id="totalPerguntasFinal">5</span>
+                            </span>
+                            <span class="resultado-rotulo">Acertos</span>
+                        </div>
+
+                        <p class="resultado-frase">
+                            O importante é aprender tanto com seus
+                            <span class="destaque-erro">erros</span> quanto com seus
+                            <span class="destaque-acerto">acertos</span>
+                        </p>
+
+                        <p id="mensagemOtima" class="resultado-complemento hidden">
+                            Ótimo desempenho na trilha de Credito.
+                        </p>
+                        <p id="mensagemBoa" class="resultado-complemento hidden">
+                            Boa tentativa, você pode refazer o quiz futuramente.
+                        </p>
+                    </div>
+                </section>
+                
+            </div>
+
+            <div class="actions-row" id="actionsRow">
+                <button id="confirmBtn" class="btn-confirm" disabled>
+                    <span>Confirmar resposta</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <button id="nextBtn" class="btn-next hidden">
+                    <span data-rotulo="proxima">Proxima questão</span>
+                    <span data-rotulo="resultado" class="hidden">Ver resultado</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <!-- mudar o # para a tela inicial -->
+
+                <a id="linkInicio" href="../quiz/trilha.html" class="btn-inicio-final hidden">
+                    <span>Página Inicial</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="motivational-tip">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                <span>Aprenda com cada resposta, mesmo quando errar.</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com">Linkedin</a>
+            <a href="https://www.github.com">Github</a>
+            
+             <!-- nao sei oq colocar no # -->
+            <a href="#">Patrocinadores</a>
+        </div>
+        <p class="copyright">© 2026 Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../../js/quiz/quiz.js"></script>
+</body>
+</html>
